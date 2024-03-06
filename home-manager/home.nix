@@ -54,7 +54,7 @@ in
   home = {
     inherit username homeDirectory;
 
-    essionVariables = {
+    sessionVariables = {
       QT_XCB_GL_INTEGRATION = "none"; # kde-connect
       NIXPKGS_ALLOW_UNFREE = "1";
       NIXPKGS_ALLOW_INSECURE = "1";
