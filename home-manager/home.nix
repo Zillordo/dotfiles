@@ -11,13 +11,13 @@ in
   imports = [
     # If you want to use home-manager modules from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModule
-
     ../modules/home/zoxide.nix
     ../modules/home/zsh.nix
     ../modules/home/neovim.nix
     ../modules/home/hyprland.nix
     ../modules/home/starship.nix
     ../modules/home/git.nix
+    ../modules/home/tmux.nix
   ];
 
   news.display = "show";

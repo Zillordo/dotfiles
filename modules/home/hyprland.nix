@@ -1,28 +1,17 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
+let
+  split-monitor-workspaces = inputs.split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces;
+in 
 {
   wayland.windowManager.hyprland = {
     enable = true;
     systemd.enable = true;
     xwayland.enable = true;
 
-    settings = {
-      windowrule = let
-        f = regex: "float, ^(${regex})$";
-      in [
-        (f "org.gnome.Calculator")
-          (f "org.gnome.Nautilus")
-          (f "pavucontrol")
-          (f "nm-connection-editor")
-          (f "blueberry.py")
-          (f "org.gnome.Settings")
-          (f "org.gnome.design.Palette")
-          (f "Color Picker")
-          (f "xdg-desktop-portal")
-          (f "xdg-desktop-portal-gnome")
-          (f "transmission-gtk")
-          (f "com.github.Aylur.ags")
-      ];
+    # plugins = [split-monitor-workspaces];
+    # https://github.com/Duckonaut/split-monitor-workspaces/pull/54 split-monitor-workspaces issue
 
+    settings = {
       plugin = {
         hyprbars = {
           bar_color = "rgb(2a2a2a)";
