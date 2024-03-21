@@ -1,4 +1,5 @@
 {
+  inputs,
   username,
   pkgs,
   ...
@@ -18,6 +19,10 @@ in
     ../modules/home/starship.nix
     ../modules/home/git.nix
     ../modules/home/tmux.nix
+    ../modules/home/packages.nix
+    ../modules/home/lf.nix
+    ../modules/home/browsers/default.nix
+    ../modules/home/ags.nix
   ];
 
   news.display = "show";
@@ -41,6 +46,7 @@ in
       #     patches = [ ./change-hello-to-hi.patch ];
       #   });
       # })
+      inputs.nur.overlay
     ];
     # Configure your nixpkgs instance
     config = {
@@ -69,17 +75,6 @@ in
     indicator = true;
    };
   };
-
-  # Add stuff for your user as you see fit:
-  # programs.neovim.enable = true;
-  home.packages = with pkgs; [
-    spotify
-    firefox
-    whatsapp-for-linux
-
-    cargo
-    gccgo13
-  ];
 
   # Enable home-manager
   programs.home-manager.enable = true;

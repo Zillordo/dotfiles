@@ -34,6 +34,7 @@
     gnome-software # for flatpak
     wl-gammactl
     wl-clipboard
+    cliphist
     wayshot
     pavucontrol
     brightnessctl

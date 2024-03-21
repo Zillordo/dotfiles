@@ -9,7 +9,7 @@
       inherit system;
       config.allowUnfree = true;
     };
-    asztal = pkgs.callPackage ./ags { inherit inputs; };
+    asztal = pkgs.callPackage ./dotfiles/ags { inherit inputs; };
   in {
     nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
       inherit system;
@@ -28,6 +28,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nur.url = "github:nix-community/NUR";
 
     home-manager = {
       url = "github:nix-community/home-manager";

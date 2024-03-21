@@ -46,10 +46,10 @@ in
 
   home.packages = with pkgs; [
     kitty
-      swww
-      pywal
-      networkmanagerapplet
-      pavucontrol
-      htop
+    swww
+    pywal
+    networkmanagerapplet
+    pavucontrol
+    htop
   ];
 }

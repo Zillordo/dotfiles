@@ -17,7 +17,6 @@
     ../modules/nixos/users.nix
     ../modules/nixos/hyprland.nix
     ../modules/nixos/open-ssh.nix
-    ../modules/nixos/terminal-utils.nix
   ];
 
   nixpkgs = {
