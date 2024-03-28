@@ -1,4 +1,4 @@
-# link to nix dev env templates https://github.com/the-nix-way/dev-templates
+# link to nix dev env templates https://github.com/the-nix-way/dev-template
 {
   programs.direnv = {
     enable = true;
