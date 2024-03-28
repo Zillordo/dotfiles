@@ -1,30 +1,52 @@
 {
   description = "Home Manager and NixOS configuration of Allan";
 
-  outputs = { home-manager, nixpkgs, ... }@inputs: let
-    username = "allan";
-    hostname = "nixos";
-    system = "x86_64-linux";
-    pkgs = import nixpkgs {
-      inherit system;
-      config.allowUnfree = true;
-    };
-    asztal = pkgs.callPackage ./dotfiles/ags { inherit inputs; };
-  in {
-    nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
-      inherit system;
-      specialArgs = { inherit inputs username hostname asztal; };
-      modules = [ ./nixos/configuration.nix ];
-    };
+  outputs = { home-manager, nixpkgs, ... }@inputs:
+    let
+      supportedSystems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
+      forEachSupportedSystem = f: nixpkgs.lib.genAttrs supportedSystems (system: f {
+        pkgs = import nixpkgs { inherit system; };
+      });
+      username = "allan";
+      hostname = "nixos";
+      system = "x86_64-linux";
+      pkgs = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
+      asztal = pkgs.callPackage ./dotfiles/ags { inherit inputs; };
+    in
+    {
 
-    homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
-      inherit pkgs;
-      extraSpecialArgs = { inherit inputs username asztal; };
-      modules = [ ./home-manager/home.nix ];
-    };
+      devShells = forEachSupportedSystem ({ pkgs }: {
+        default = pkgs.mkShell {
+          packages = with pkgs; [
+            cachix
+            lorri
+            niv
+            nixfmt
+            statix
+            vulnix
+            haskellPackages.dhall-nix
+            rnix-lsp
+          ];
+        };
+      });
 
-    packages.${system}.default = asztal;
-  };
+      nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
+        inherit system;
+        specialArgs = { inherit inputs username hostname asztal; };
+        modules = [ ./nixos/configuration.nix ];
+      };
+
+      homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        extraSpecialArgs = { inherit inputs username asztal; };
+        modules = [ ./home-manager/home.nix ];
+      };
+
+      packages.${system}.default = asztal;
+    };
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";

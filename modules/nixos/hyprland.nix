@@ -13,7 +13,7 @@
 
   security = {
     polkit.enable = true;
-    pam.services.ags = {};
+    pam.services.ags = { };
   };
 
   environment.systemPackages = with pkgs; with gnome; [

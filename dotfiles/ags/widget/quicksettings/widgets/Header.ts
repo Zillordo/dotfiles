@@ -1,7 +1,5 @@
 import icons from "lib/icons";
 import { uptime } from "lib/variables";
-import options from "options";
-
 const battery = await Service.import("battery");
 const { image, size } = options.quicksettings.avatar;
 

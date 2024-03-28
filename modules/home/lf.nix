@@ -2,23 +2,25 @@
   programs.lf = {
     enable = true;
 
-    commands = let
-      trash = ''''${{
+    commands =
+      let
+        trash = ''''${{
         set -f
         gio trash $fx
       }}'';
-    in {
-      trash = trash;
-      delete = trash;
+      in
+      {
+        trash = trash;
+        delete = trash;
 
-      open = ''''${{
+        open = ''''${{
         case $(file --mime-type -Lb $f) in
             text/*) lf -remote "send $id \$$EDITOR \$fx";;
             *) for f in $fx; do $OPENER "$f" > /dev/null 2> /dev/null & done;;
         esac
       }}'';
 
-      fzf = ''''${{
+        fzf = ''''${{
         res="$(find . -maxdepth 1 | fzf --reverse --header='Jump to location')"
         if [ -n "$res" ]; then
             if [ -d "$res" ]; then
@@ -31,7 +33,7 @@
         fi
       }}'';
 
-      unzip = ''''${{
+        unzip = ''''${{
         set -f
         case $f in
             *.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar xjvf $f;;
@@ -43,7 +45,7 @@
         esac
       }}'';
 
-      zip = ''''${{
+        zip = ''''${{
         set -f
         mkdir $1
         cp -r $fx $1
@@ -51,16 +53,16 @@
         rm -rf $1
       }}'';
 
-      pager = ''
-        $bat --paging=always "$f"
-      '';
+        pager = ''
+          $bat --paging=always "$f"
+        '';
 
-      on-select = ''&{{
+        on-select = ''&{{
         lf -remote "send $id set statfmt \"$(eza -ld --color=always "$f")\""
       }}'';
 
-      q = "quit";
-    };
+        q = "quit";
+      };
 
     keybindings = {
       a = "push %mkdir<space>";

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   programs.neovim = {
     enable = true;
@@ -10,9 +10,13 @@
     withPython3 = true;
   };
 
-  xdg.configFile.nvim = {
-    source = ../../dotfiles/nvim;
-    recursive = true;
+  xdg.configFile = {
+    nvim = {
+      source =
+        config.lib.file.mkOutOfStoreSymlink
+          "${config.home.homeDirectory}/.config/nix-config/dotfiles/nvim";
+      recursive = true;
+    };
   };
 
   home.packages = with pkgs; [

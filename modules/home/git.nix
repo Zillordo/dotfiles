@@ -1,7 +1,8 @@
 let
   email = "konecnyallan@gmail.com";
   name = "Zillordo";
-in {
+in
+{
   programs.git = {
     enable = true;
     extraConfig = {

@@ -11,10 +11,9 @@
       theme = "robbyrussell";
     };
 
-    shellAliases = { 
+    shellAliases = {
       updaten = "sudo nixos-rebuild switch";
       updateh = "home-manager switch";
-      vi = "neovim";
     };
   };
 }

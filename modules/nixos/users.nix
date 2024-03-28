@@ -7,7 +7,7 @@
     isNormalUser = true;
     description = "allan";
     extraGroups = [ "networkmanager" "input" "wheel" "video" "audio" "tss" ];
-    shell = pkgs.zsh;	
+    shell = pkgs.zsh;
   };
 
   # Change runtime directory size

@@ -1,7 +1,7 @@
 { inputs, pkgs, ... }:
 let
   split-monitor-workspaces = inputs.split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces;
-in 
+in
 {
   wayland.windowManager.hyprland = {
     enable = true;

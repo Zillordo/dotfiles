@@ -55,9 +55,11 @@ class Asusctl extends Service {
   get profiles(): Profile[] {
     return ["Performance", "Balanced", "Quiet"];
   }
+
   get profile() {
     return this.#profile;
   }
+
   get mode() {
     return this.#mode;
   }

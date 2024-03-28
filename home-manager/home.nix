@@ -23,6 +23,7 @@ in
     ../modules/home/lf.nix
     ../modules/home/browsers/default.nix
     ../modules/home/ags.nix
+    ../modules/home/direnv.nix
   ];
 
   news.display = "show";

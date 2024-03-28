@@ -1,6 +1,7 @@
 import PanelButton from "../PanelButton";
 import icons from "lib/icons";
 import asusctl from "service/asusctl";
+import muteService from "service/mute";
 
 const notifications = await Service.import("notifications");
 const bluetooth = await Service.import("bluetooth");
@@ -90,18 +91,21 @@ const NetworkIndicator = () =>
 
 const AudioIndicator = () =>
   Widget.Icon({
-    icon: audio.speaker.bind("volume").as((vol) => {
-      const { muted, low, medium, high, overamplified } = icons.audio.volume;
-      const cons = [
-        [101, overamplified],
-        [67, high],
-        [34, medium],
-        [1, low],
-        [0, muted],
-      ] as const;
-      const icon = cons.find(([n]) => n <= vol * 100)?.[1] || "";
-      return audio.speaker.is_muted ? muted : icon;
-    }),
+    icon: Utils.merge(
+      [audio.speaker.bind("volume"), muteService.bind("muted-value")],
+      (vol, _) => {
+        const { muted, low, medium, high, overamplified } = icons.audio.volume;
+        const cons = [
+          [101, overamplified],
+          [67, high],
+          [34, medium],
+          [1, low],
+          [0, muted],
+        ] as const;
+        const icon = cons.find(([n]) => n <= vol * 100)?.[1] || "";
+        return audio.speaker.is_muted ? muted : icon;
+      },
+    ),
   });
 
 export default () =>

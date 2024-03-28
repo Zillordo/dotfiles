@@ -13,6 +13,7 @@
     spotify
     whatsapp-for-linux
     firefox
+    caprine-bin #facebook messanger app for linux
 
     # tools
     bat
@@ -25,14 +26,10 @@
     glib
     fnm
 
-    # langs
+    # some language tools needed for vim or other apps I use
     nodejs
     gjs
-    bun
     cargo
-    go
     gcc
-    typescript
-    eslint
   ];
 }
