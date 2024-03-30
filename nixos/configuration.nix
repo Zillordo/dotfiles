@@ -8,11 +8,10 @@
 }: {
   # You can import other NixOS modules here
   imports = [
-    # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
     ../modules/nixos/gc.nix
     ../modules/nixos/fonts.nix
-    ../modules/nixos/gnome.nix
+    # ../modules/nixos/gnome.nix
     ../modules/nixos/users.nix
     ../modules/nixos/hyprland.nix
     ../modules/nixos/open-ssh.nix

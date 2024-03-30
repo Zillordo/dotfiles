@@ -24,6 +24,7 @@ in
     ../modules/home/browsers/default.nix
     ../modules/home/ags.nix
     ../modules/home/direnv.nix
+    ../modules/home/work/packages.nix
   ];
 
   news.display = "show";
@@ -65,6 +66,7 @@ in
       QT_XCB_GL_INTEGRATION = "none"; # kde-connect
       NIXPKGS_ALLOW_UNFREE = "1";
       NIXPKGS_ALLOW_INSECURE = "1";
+      NIXOS_OZONE_WL = "1";
     };
 
     sessionPath = ["$HOME/.local/bin"];

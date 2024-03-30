@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }: {
+{ pkgs, inputs, config, asztal, ... }: {
   services.xserver.displayManager.startx.enable = true;
 
   programs.hyprland = {
@@ -9,6 +9,10 @@
 
   xdg.portal = {
     enable = true;
+    wlr.enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+    ];
   };
 
   security = {
@@ -17,13 +21,13 @@
   };
 
   environment.systemPackages = with pkgs; with gnome; [
-    waybar
     rofi-wayland
-
+    gnome.adwaita-icon-theme
     loupe
     adwaita-icon-theme
     nautilus
     baobab
+    gnome-text-editor
     gnome-calendar
     gnome-boxes
     gnome-system-monitor
@@ -34,7 +38,6 @@
     gnome-software # for flatpak
     wl-gammactl
     wl-clipboard
-    cliphist
     wayshot
     pavucontrol
     brightnessctl
@@ -71,4 +74,31 @@
       gnome-online-accounts.enable = true;
     };
   };
+
+  services.greetd = {
+    enable = true;
+    settings.default_session.command = pkgs.writeShellScript "greeter" ''
+      export XKB_DEFAULT_LAYOUT=${config.services.xserver.xkb.layout}
+      export XCURSOR_THEME=Qogir
+      ${asztal}/bin/greeter
+    '';
+  };
+
+  systemd.tmpfiles.rules = [
+    "d '/var/cache/greeter' - greeter greeter - -"
+  ];
+
+  system.activationScripts.wallpaper = ''
+    PATH=$PATH:${pkgs.busybox}/bin:${pkgs.jq}/bin
+    CACHE="/var/cache/greeter"
+    OPTS="$CACHE/options.json"
+    HOME="/home/$(find /home -maxdepth 1 -printf '%f\n' | tail -n 1)"
+
+    cp $HOME/.cache/ags/options.json $OPTS
+    chown greeter:greeter $OPTS
+
+    BG=$(cat $OPTS | jq -r '.wallpaper // "$HOME/.config/background"')
+    cp $BG $CACHE/background
+    chown greeter:greeter $CACHE/background
+  '';
 }
