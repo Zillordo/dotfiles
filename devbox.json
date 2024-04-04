@@ -1,0 +1,21 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jetpack-io/devbox/0.10.2/.schema/devbox.schema.json",
+  "packages": [
+    "nixpkgs-fmt",
+    "nil",
+    "nixfmt",
+    "cachix",
+    "lorri",
+    "niv",
+    "statix",
+    "nls",
+    "vulnix",
+    "haskellPackages.dhall-nix"
+  ],
+  "shell": {
+    "scripts": {
+      "update-home": ["home-manager switch --flake .#allank"],
+      "update-nix": ["sudo nixos-rebuild switch --flake .#nixos"]
+    }
+  }
+}

@@ -3,10 +3,6 @@
 
   outputs = { home-manager, nixpkgs, ... }@inputs:
     let
-      supportedSystems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
-      forEachSupportedSystem = f: nixpkgs.lib.genAttrs supportedSystems (system: f {
-        pkgs = import nixpkgs { inherit system; };
-      });
       username = "allank";
       hostname = "nixos";
       system = "x86_64-linux";
@@ -17,22 +13,6 @@
       asztal = pkgs.callPackage ./dotfiles/ags { inherit inputs; };
     in
     {
-
-      devShells = forEachSupportedSystem ({ pkgs }: {
-        default = pkgs.mkShell {
-          packages = with pkgs; [
-            cachix
-            lorri
-            niv
-            nixfmt-classic
-            statix
-            nil
-            vulnix
-            haskellPackages.dhall-nix
-          ];
-        };
-      });
-
       nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = { inherit inputs username hostname asztal; };

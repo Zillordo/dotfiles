@@ -99,9 +99,6 @@
     vim
     wget
     lf
-    tmux
-    ripgrep
-    nodejs
   ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

@@ -1,0 +1,45 @@
+{
+  "lockfile_version": "1",
+  "packages": {
+    "cachix": {
+      "resolved": "github:NixOS/nixpkgs/75a52265bda7fd25e06e3a67dee3f0354e73243c#cachix",
+      "source": "nixpkg"
+    },
+    "haskellPackages.dhall-nix": {
+      "resolved": "github:NixOS/nixpkgs/75a52265bda7fd25e06e3a67dee3f0354e73243c#haskellPackages.dhall-nix",
+      "source": "nixpkg"
+    },
+    "lorri": {
+      "resolved": "github:NixOS/nixpkgs/75a52265bda7fd25e06e3a67dee3f0354e73243c#lorri",
+      "source": "nixpkg"
+    },
+    "nil": {
+      "resolved": "github:NixOS/nixpkgs/75a52265bda7fd25e06e3a67dee3f0354e73243c#nil",
+      "source": "nixpkg"
+    },
+    "niv": {
+      "resolved": "github:NixOS/nixpkgs/75a52265bda7fd25e06e3a67dee3f0354e73243c#niv",
+      "source": "nixpkg"
+    },
+    "nixfmt": {
+      "resolved": "github:NixOS/nixpkgs/75a52265bda7fd25e06e3a67dee3f0354e73243c#nixfmt",
+      "source": "nixpkg"
+    },
+    "nixpkgs-fmt": {
+      "resolved": "github:NixOS/nixpkgs/75a52265bda7fd25e06e3a67dee3f0354e73243c#nixpkgs-fmt",
+      "source": "nixpkg"
+    },
+    "nls": {
+      "resolved": "github:NixOS/nixpkgs/75a52265bda7fd25e06e3a67dee3f0354e73243c#nls",
+      "source": "nixpkg"
+    },
+    "statix": {
+      "resolved": "github:NixOS/nixpkgs/75a52265bda7fd25e06e3a67dee3f0354e73243c#statix",
+      "source": "nixpkg"
+    },
+    "vulnix": {
+      "resolved": "github:NixOS/nixpkgs/75a52265bda7fd25e06e3a67dee3f0354e73243c#vulnix",
+      "source": "nixpkg"
+    }
+  }
+}
