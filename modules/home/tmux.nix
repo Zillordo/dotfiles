@@ -110,7 +110,6 @@ in
       vim-tmux-navigator
       yank
     ];
-    prefix = "C-Space";
     baseIndex = 1;
     escapeTime = 0;
     keyMode = "vi";
@@ -132,8 +131,9 @@ in
       set-option -g pane-active-border fg=black
       set-option -g pane-border-style fg=black
       set-option -g status-style "bg=${bg} fg=${fg}"
+      set-option -g status-position "top"
       set-option -g status-left "${indicator}"
-      set-option -g status-right "${pwd} | ${time}"
+      set-option -g status-right "${pwd}"
       set-option -g window-status-current-format "${current_window}"
       set-option -g window-status-format "${window_status}"
       set-option -g window-status-separator ""

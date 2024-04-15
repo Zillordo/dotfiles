@@ -19,11 +19,6 @@ configuration {
 	window-format:              "{w}   {c}   {t}";
 }
 
-/*****----- Global Properties -----*****/
-* {
-    font:                        "Iosevka Nerd Font 10";
-}
-
 /*****----- Main Window -----*****/
 window {
     /* properties for window widget */
