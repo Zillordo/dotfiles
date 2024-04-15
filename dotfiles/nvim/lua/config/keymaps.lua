@@ -20,9 +20,3 @@ map("n", "<leader>Y", [["+Y]])
 map({ "n", "v" }, "<leader>d", [["_d]])
 
 map("n", "Q", "<nop>")
-
--- Tmux navigation using the <Ctrl> hjkl keys
-map("n", "<C-h>", "<cmd> TmuxNavigateLeft <CR>")
-map("n", "<C-l>", "<cmd> TmuxNavigateRight <CR>")
-map("n", "<C-j>", "<cmd> TmuxNavigateDown <CR>")
-map("n", "<C-k>", "<cmd> TmuxNavigateUp <CR>")
