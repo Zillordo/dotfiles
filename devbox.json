@@ -15,7 +15,8 @@
   "shell": {
     "scripts": {
       "update-home": ["home-manager switch --flake .#allank"],
-      "update-nix": ["sudo nixos-rebuild switch --flake .#nixos"]
+      "update-nix": ["sudo nixos-rebuild switch --flake .#nixos"],
+      "update-flake": ["sudo nix-channel --update", "sudo nix flake update"]
     }
   }
 }

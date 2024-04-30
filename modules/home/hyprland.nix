@@ -34,7 +34,11 @@ in
     package = hyprland;
     systemd.enable = true;
     xwayland.enable = true;
-    # plugins = with plugins; [ hyprbars borderspp ];
+    plugins = with plugins; [
+          # hyprexpo
+          # hyprbars
+          # borderspp
+        ];
 
     settings = {
       exec-once = [
@@ -48,18 +52,23 @@ in
         "HDMI-A-1,highres,1920x0,1"
       ];
 
+      workspace = [
+        "r[1-5], monitor:DP-3, persistant:true"
+        "r[6-9], monitor:HDMI-A-1, persistant:true"
+      ];
+
       general = {
         layout = "dwindle";
         resize_on_border = true;
       };
 
       misc = {
+        disable_hyprland_logo = true;
         disable_splash_rendering = true;
         force_default_wallpaper = 1;
       };
 
       input = {
-        kb_layout = "us";
         follow_mouse = 1;
         mouse_refocus = true;
         touchpad = {
@@ -78,13 +87,11 @@ in
       dwindle = {
         pseudotile = "yes";
         preserve_split = "yes";
-        # no_gaps_when_only = "yes";
       };
 
       gestures = {
         workspace_swipe = true;
         workspace_swipe_forever = true;
-        workspace_swipe_numbered = true;
       };
 
       windowrule = let
@@ -120,7 +127,7 @@ in
         "${mod}, R,       exec, ${rofi} -show drun -show-icons"
         "${mod}, Tab,     ${e} -t overview"
         ",XF86PowerOff,  ${e} -r 'powermenu.shutdown()'"
-        ",XF86Launch4,   ${e} -r 'recorder.start()'"
+        "ALT SHIFT, R,   ${e} -r 'recorder.start()'"
         ",Print,         ${e} -r 'recorder.screenshot()'"
         "SHIFT,Print,    ${e} -r 'recorder.screenshot(true)'"
         "${mod}, Return, exec, ${terminal}"
@@ -138,6 +145,8 @@ in
         "${mod}, F, togglefloating"
         "${mod}, G, fullscreen, 1"
         "${mod}, SPACE, togglesplit"
+
+        # "SUPER, grave, hyprexpo:expo, toggle"
 
         (mvfocus "k" "u")
         (mvfocus "j" "d")
@@ -214,6 +223,15 @@ in
       };
 
       plugin = {
+        hyprexpo = {
+          columns = 3;
+          gap_size = 5;
+          bg_col = "rgb(232323)";
+          workspace_method = "center current";
+          enable_gesture = true;
+          gesture_distance = 300;
+          gesture_positive = false;
+        };
         hyprbars = {
           bar_color = "rgb(2a2a2a)";
           bar_height = 28;
