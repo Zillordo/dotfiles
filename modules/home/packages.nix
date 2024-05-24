@@ -24,7 +24,10 @@
     zip
     unzip
     glib
-    fnm
+    dust
+    btop
+    tldr
+    tokei
 
     # some language tools needed for vim or other apps I use
     nodejs

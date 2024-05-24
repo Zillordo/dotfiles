@@ -4,11 +4,6 @@ let
   plugins = inputs.hyprland-plugins.packages.${pkgs.system};
   split-monitor-workspaces = inputs.split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces;
 
-  yt = pkgs.writeShellScript "yt" ''
-    notify-send "Opening video" "$(wl-paste)"
-    mpv "$(wl-paste)"
-  '';
-
   playerctl = "${pkgs.playerctl}/bin/playerctl";
   brightnessctl = "${pkgs.brightnessctl}/bin/brightnessctl";
   pactl = "${pkgs.pulseaudio}/bin/pactl";
@@ -53,8 +48,8 @@ in
       ];
 
       workspace = [
-        "r[1-5], monitor:DP-3, persistant:true"
-        "r[6-9], monitor:HDMI-A-1, persistant:true"
+        "r[1-3], monitor:DP-3, persistant:true"
+        "r[4-6], monitor:HDMI-A-1, persistant:true"
       ];
 
       general = {
@@ -135,9 +130,6 @@ in
         "${mod} SHIFT, P, ${e} -t powermenu"
         "${mod}, N, ${e} -t datemenu"
         "${mod}, Comma, ${e} -t settings-dialog"
-
-        # youtube
-        ", XF86Launch1,  exec, ${yt}"
 
         "ALT, Tab, focuscurrentorlast"
         "CTRL ALT, Delete, exit"
