@@ -12,7 +12,6 @@
     obsidian
     spotify
     whatsapp-for-linux
-    firefox
     caprine-bin #facebook messanger app for linux
 
     # tools

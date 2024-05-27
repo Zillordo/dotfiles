@@ -22,6 +22,7 @@ in
     ../modules/home/packages.nix
     ../modules/home/lf.nix
     ../modules/home/browsers/default.nix
+    ../modules/home/browsers/brave.nix
     ../modules/home/ags.nix
     ../modules/home/direnv.nix
     ../modules/home/terminals/kitty.nix

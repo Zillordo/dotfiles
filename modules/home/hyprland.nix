@@ -11,7 +11,7 @@ let
 
 
   terminal = "kitty";
-  browser = "firefox";
+  browser = "brave";
   mod = "SUPER";
 in
 {
