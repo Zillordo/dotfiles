@@ -42,16 +42,6 @@ in
         "transmission-gtk"
       ];
 
-      monitor = [
-        "DP-3,highres,0x0,1"
-        "HDMI-A-1,highres,1920x0,1"
-      ];
-
-      workspace = [
-        "r[1-3], monitor:DP-3, persistant:true"
-        "r[4-6], monitor:HDMI-A-1, persistant:true"
-      ];
-
       general = {
         layout = "dwindle";
         resize_on_border = true;

@@ -13,6 +13,7 @@
     spotify
     whatsapp-for-linux
     caprine-bin #facebook messanger app for linux
+    gnome.gnome-bluetooth
 
     # tools
     bat

@@ -11,13 +11,14 @@
     ./hardware-configuration.nix
     #../modules/nixos/gc.nix
     ../modules/nixos/fonts.nix
-    ../modules/nixos/gnome.nix
+    #../modules/nixos/gnome.nix
     ../modules/nixos/users.nix
-    #../modules/nixos/hyprland.nix
+    ../modules/nixos/hyprland.nix
     ../modules/nixos/open-ssh.nix
     ../modules/nixos/audio.nix
     ../modules/nixos/work/extra-hosts.nix
     ../modules/nixos/nix-helper.nix
+    ../modules/nixos/bluetooth.nix
   ];
 
   nixpkgs = {
@@ -64,7 +65,7 @@ environment.etc =
 
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
-
+  
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;

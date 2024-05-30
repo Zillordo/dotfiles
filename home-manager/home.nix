@@ -15,7 +15,7 @@ in
     ../modules/home/zoxide.nix
     ../modules/home/zsh.nix
     ../modules/home/neovim.nix
-    #../modules/home/hyprland.nix
+    ../modules/home/hyprland.nix
     ../modules/home/starship.nix
     ../modules/home/git.nix
     ../modules/home/tmux.nix
@@ -23,10 +23,10 @@ in
     ../modules/home/lf.nix
     ../modules/home/browsers/default.nix
     ../modules/home/browsers/brave.nix
-    #../modules/home/ags.nix
+    ../modules/home/ags.nix
     ../modules/home/direnv.nix
     ../modules/home/terminals/kitty.nix
-    #../modules/home/rofi.nix
+    ../modules/home/rofi.nix
     ../modules/home/work/packages.nix
   ];
 
