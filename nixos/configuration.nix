@@ -9,11 +9,11 @@
   # You can import other NixOS modules here
   imports = [
     ./hardware-configuration.nix
-    ../modules/nixos/gc.nix
+    #../modules/nixos/gc.nix
     ../modules/nixos/fonts.nix
-    # ../modules/nixos/gnome.nix
+    ../modules/nixos/gnome.nix
     ../modules/nixos/users.nix
-    ../modules/nixos/hyprland.nix
+    #../modules/nixos/hyprland.nix
     ../modules/nixos/open-ssh.nix
     ../modules/nixos/audio.nix
     ../modules/nixos/work/extra-hosts.nix
@@ -65,9 +65,9 @@ environment.etc =
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
 
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sda";
-  boot.loader.grub.useOSProber = true;
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   time.timeZone = "Europe/Prague";
 
@@ -103,5 +103,5 @@ environment.etc =
   ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  system.stateVersion = "23.11";
+  system.stateVersion = "24.05";
 }
