@@ -1,6 +1,6 @@
 import { sh } from "lib/utils";
 
-type Profile = "Performance" | "Balanced" | "Quiet";
+type Profile = "bat" | "ac";
 type Mode = "Hybrid" | "Integrated";
 
 class Asusctl extends Service {
@@ -15,8 +15,8 @@ class Asusctl extends Service {
     );
   }
 
-  available = !!Utils.exec("which asusctl");
-  #profile: Profile = "Balanced";
+  available = !!Utils.exec("tlp -s");
+  #profile: Profile = "bat";
   #mode: Mode = "Hybrid";
 
   async nextProfile() {
@@ -28,7 +28,7 @@ class Asusctl extends Service {
   }
 
   async setProfile(prof: Profile) {
-    await sh(`asusctl profile --profile-set ${prof}`);
+    await sh(`sudo tlp ${prof}`);
     this.#profile = prof;
     this.changed("profile");
   }
@@ -45,15 +45,20 @@ class Asusctl extends Service {
     super();
 
     if (this.available) {
-      sh("asusctl profile -p").then(
-        (p) => (this.#profile = p.split(" ")[3] as Profile),
-      );
-      sh("supergfxctl -g").then((m) => (this.#mode = m as Mode));
+      sh("tlp-stat -s").then((p: string) => {
+        const lines = p.trim().split("/n");
+        for (const line of lines) {
+          if (line.startsWith("Mode")) {
+            const value = line.split("=")[1];
+            this.#profile = value as Profile;
+          }
+        }
+      });
     }
   }
 
   get profiles(): Profile[] {
-    return ["Performance", "Balanced", "Quiet"];
+    return ["bat", "ac"];
   }
 
   get profile() {

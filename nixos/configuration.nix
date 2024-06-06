@@ -19,6 +19,7 @@
     ../modules/nixos/work/extra-hosts.nix
     ../modules/nixos/nix-helper.nix
     ../modules/nixos/bluetooth.nix
+    ../modules/nixos/tlp.nix
   ];
 
   nixpkgs = {
@@ -48,7 +49,7 @@
   # This will additionally add your inputs to the system's legacy channels
   # Making legacy nix commands consistent as well, awesome!
   nix.nixPath = [ "/etc/nix/path" ];
-environment.etc =
+  environment.etc =
     lib.mapAttrs'
       (name: value: {
         name = "nix/path/${name}";
@@ -66,9 +67,15 @@ environment.etc =
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
   
+  # different for laptop and desktop
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelModules = [ "hp-wmi" ];
+  boot.kernelParams = [ "i915.force_probe=7d55" ];
+  boot.blacklistedKernelModules = [ "snd_hda_intel" "snd_soc_skl" ];
+  hardware.enableAllFirmware = true;
+  hardware.enableRedistributableFirmware = true;
 
   time.timeZone = "Europe/Prague";
 

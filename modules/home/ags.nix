@@ -21,6 +21,7 @@
     pavucontrol
     networkmanager
     gtk3
+    networkmanagerapplet
   ];
 
   programs.astal = {

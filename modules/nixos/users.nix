@@ -6,7 +6,7 @@
   users.users.allank = {
     isNormalUser = true;
     description = "allank";
-    extraGroups = [ "networkmanager" "input" "wheel" "video" "audio" "tss" ];
+    extraGroups = [ "networkmanager" "input" "wheel" "video" "audio" "sound" "tss" "tty" ];
     shell = pkgs.zsh;
   };
 
