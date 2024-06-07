@@ -6,8 +6,25 @@
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
+    withRuby = true;
     withNodeJs = true;
     withPython3 = true;
+
+    extraPackages = with pkgs; [
+      git
+      gcc
+      gnumake
+      unzip
+      wget
+      curl
+      tree-sitter
+      ripgrep
+      fd
+      fzf
+      cargo
+      lazygit
+      luajitPackages.jsregexp
+    ];
   };
 
   xdg.configFile = {
@@ -18,9 +35,4 @@
       recursive = true;
     };
   };
-
-  home.packages = with pkgs; [
-    lazygit
-    luajitPackages.jsregexp
-  ];
 }
