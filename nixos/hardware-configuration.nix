@@ -8,10 +8,13 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usb_storage" "sd_mod" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usb_storage" "sd_mod" "atkbd" "acpi_call"];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-intel" ];
-  boot.extraModulePackages = [ ];
+  boot.kernelModules = [ "kvm-intel" "hp-wmi"];
+  boot.kernelParams = [ "i915.force_probe=7d55" "psmouse.synaptics_intertouch=0" ];
+  boot.extraModulePackages = with config.boot.kernelPackages; [
+   acpi_call
+  ];
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/85fbd30f-91bf-4dfa-86c5-b40bfca4b943";

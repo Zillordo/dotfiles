@@ -2,24 +2,24 @@
 let
   hyprland = inputs.hyprland.packages.${pkgs.system}.hyprland;
   plugins = inputs.hyprland-plugins.packages.${pkgs.system};
-  split-monitor-workspaces = inputs.split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces;
+  split-monitor-workspaces =
+    inputs.split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces;
 
   playerctl = "${pkgs.playerctl}/bin/playerctl";
   brightnessctl = "${pkgs.brightnessctl}/bin/brightnessctl";
   pactl = "${pkgs.pulseaudio}/bin/pactl";
   rofi = "${pkgs.rofi-wayland}/bin/rofi";
 
-
   terminal = "kitty";
   browser = "brave";
   mod = "SUPER";
-in
-{
+in {
   xdg.desktopEntries."org.gnome.Settings" = {
     name = "Settings";
     comment = "Gnome Control Center";
     icon = "org.gnome.Settings";
-    exec = "env XDG_CURRENT_DESKTOP=gnome ${pkgs.gnome.gnome-control-center}/bin/gnome-control-center";
+    exec =
+      "env XDG_CURRENT_DESKTOP=gnome ${pkgs.gnome.gnome-control-center}/bin/gnome-control-center";
     categories = [ "X-Preferences" ];
     terminal = false;
   };
@@ -29,18 +29,16 @@ in
     package = hyprland;
     systemd.enable = true;
     xwayland.enable = true;
-    plugins = with plugins; [
-          # hyprexpo
-          # hyprbars
-          # borderspp
-        ];
+    plugins = with plugins;
+      [
+        # hyprexpo
+        # hyprbars
+        # borderspp
+      ];
 
     settings = {
-      exec-once = [
-        "ags -b hypr"
-        "hyprctl setcursor Qogir 24"
-        "transmission-gtk"
-      ];
+      exec-once =
+        [ "ags -b hypr" "hyprctl setcursor Qogir 24" "transmission-gtk" ];
 
       general = {
         layout = "dwindle";
@@ -65,9 +63,7 @@ in
         float_switch_override_focus = 2;
       };
 
-      binds = {
-        allow_workspace_cycles = true;
-      };
+      binds = { allow_workspace_cycles = true; };
 
       dwindle = {
         pseudotile = "yes";
@@ -79,8 +75,7 @@ in
         workspace_swipe_forever = true;
       };
 
-      windowrule = let
-        f = regex: "float, ^(${regex})$";
+      windowrule = let f = regex: "float, ^(${regex})$";
       in [
         (f "org.gnome.Calculator")
         (f "org.gnome.Nautilus")
@@ -105,7 +100,7 @@ in
         mvwindow = binding "${mod} SHIFT" "movewindow";
         mvtows = binding "${mod} SHIFT" "movetoworkspace";
         e = "exec, ags -b hypr";
-        arr = [1 2 3 4 5 6 7 8 9];
+        arr = [ 1 2 3 4 5 6 7 8 9 ];
 
       in [
         "${mod} SHIFT, B,  ${e} quit; ags -b hypr"
@@ -146,8 +141,7 @@ in
         (mvwindow "j" "d")
         (mvwindow "l" "r")
         (mvwindow "h" "l")
-      ]
-      ++ (map (i: ws (toString i) (toString i)) arr)
+      ] ++ (map (i: ws (toString i) (toString i)) arr)
       ++ (map (i: mvtows (toString i) (toString i)) arr);
 
       bindle = [
@@ -158,7 +152,7 @@ in
         ",XF86AudioMute,  exec, ${pactl} set-sink-volume @DEFAULT_SINK@ toggle"
       ];
 
-      bindl =  [
+      bindl = [
         ",XF86AudioPlay,    exec, ${playerctl} play-pause"
         ",XF86AudioStop,    exec, ${playerctl} pause"
         ",XF86AudioPause,   exec, ${playerctl} pause"
@@ -167,10 +161,8 @@ in
         ",XF86AudioMicMute, exec, ${pactl} set-source-mute @DEFAULT_SOURCE@ toggle"
       ];
 
-      bindm = [
-        "${mod}, mouse:273, resizewindow"
-        "${mod}, mouse:272, movewindow"
-      ];
+      bindm =
+        [ "${mod}, mouse:273, resizewindow" "${mod}, mouse:272, movewindow" ];
 
       decoration = {
         drop_shadow = "yes";
@@ -185,7 +177,7 @@ in
           size = 8;
           passes = 3;
           new_optimizations = "on";
-          noise = 0.01;
+          noise = 1.0e-2;
           contrast = 0.9;
           brightness = 0.8;
           popups = true;
