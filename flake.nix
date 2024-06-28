@@ -11,19 +11,19 @@
         config.allowUnfree = true;
       };
       asztal = pkgs.callPackage ./dotfiles/ags { inherit inputs; };
-    in
-    {
+    in {
       nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = { inherit inputs username hostname asztal; };
         modules = [ ./nixos/configuration.nix ];
       };
 
-      homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        extraSpecialArgs = { inherit inputs username asztal; };
-        modules = [ ./home-manager/home.nix ];
-      };
+      homeConfigurations.${username} =
+        home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          extraSpecialArgs = { inherit inputs username asztal; };
+          modules = [ ./home-manager/home.nix ];
+        };
 
       packages.${system}.default = asztal;
     };

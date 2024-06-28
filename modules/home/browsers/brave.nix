@@ -1,6 +1,1 @@
-{ pkgs, ... }:
-{
-  home.packages = with pkgs; with nodePackages_latest; with gnome; [
-    brave
-  ];
-}
+{ pkgs, ... }: { home.packages = with pkgs; [ brave ]; }

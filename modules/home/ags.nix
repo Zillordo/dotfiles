@@ -26,9 +26,7 @@
 
   programs.astal = {
     enable = true;
-    extraPackages = with pkgs; [
-      libadwaita
-    ];
+    extraPackages = with pkgs; [ libadwaita ];
   };
 
   programs.ags = {

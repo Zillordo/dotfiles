@@ -11,7 +11,7 @@ let
   rofi = "${pkgs.rofi-wayland}/bin/rofi";
 
   terminal = "kitty";
-  browser = "brave";
+  browser = "firefox";
   mod = "SUPER";
 in {
   xdg.desktopEntries."org.gnome.Settings" = {

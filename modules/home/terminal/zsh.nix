@@ -1,5 +1,4 @@
-{ ... }:
-{
+{ ... }: {
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -12,8 +11,9 @@
     };
 
     shellAliases = {
-      updaten = "sudo nixos-rebuild switch";
-      updateh = "home-manager switch";
+      mux = "tmux";
+      pnp = "pnpm";
+      ls = "eza";
     };
   };
 }

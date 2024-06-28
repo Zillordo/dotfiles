@@ -1,5 +1,4 @@
-{ pkgs, config, ... }:
-{
+{ pkgs, config, ... }: {
   programs.neovim = {
     enable = true;
     defaultEditor = true;
@@ -12,15 +11,11 @@
 
   xdg.configFile = {
     nvim = {
-      source =
-        config.lib.file.mkOutOfStoreSymlink
-          "${config.home.homeDirectory}/.config/dotfiles/dotfiles/nvim";
+      source = config.lib.file.mkOutOfStoreSymlink
+        "${config.home.homeDirectory}/.config/dotfiles/dotfiles/nvim";
       recursive = true;
     };
   };
 
-  home.packages = with pkgs; [
-    lazygit
-    luajitPackages.jsregexp
-  ];
+  home.packages = with pkgs; [ lazygit luajitPackages.jsregexp ];
 }

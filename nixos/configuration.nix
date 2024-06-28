@@ -11,7 +11,7 @@
     ../modules/nixos/hyprland.nix
     ../modules/nixos/open-ssh.nix
     ../modules/nixos/audio.nix
-    ../modules/nixos/work/extra-hosts.nix
+    ../modules/nixos/work
     ../modules/nixos/nix-helper.nix
     ../modules/nixos/bluetooth.nix
     ../modules/nixos/tlp.nix
