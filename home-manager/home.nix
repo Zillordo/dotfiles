@@ -1,13 +1,6 @@
-{
-  inputs,
-  username,
-  pkgs,
-  ...
-}: 
-let
-  homeDirectory = "/home/${username}";
-in
-{
+{ inputs, username, pkgs, ... }:
+let homeDirectory = "/home/${username}";
+in {
   # You can import other home-manager modules here
   imports = [
     # If you want to use home-manager modules from other flakes (such as nix-colors):
@@ -34,9 +27,7 @@ in
 
   nix = {
     package = pkgs.nix;
-    settings = {
-      experimental-features = ["nix-command" "flakes"];
-    };
+    settings = { experimental-features = [ "nix-command" "flakes" ]; };
   };
 
   nixpkgs = {
@@ -72,14 +63,14 @@ in
       NIXOS_OZONE_WL = "1";
     };
 
-    sessionPath = ["$HOME/.local/bin"];
+    sessionPath = [ "$HOME/.local/bin" ];
   };
 
   services = {
     kdeconnect = {
-    enable = true;
-    indicator = true;
-   };
+      enable = true;
+      indicator = true;
+    };
   };
 
   # Enable home-manager
@@ -89,5 +80,5 @@ in
   systemd.user.startServices = "sd-switch";
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  home.stateVersion = "23.11";
+  home.stateVersion = "24.05";
 }
