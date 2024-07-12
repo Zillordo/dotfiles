@@ -11,6 +11,7 @@ in
       credential.helper = "store";
       github.user = name;
       push.autoSetupRemote = true;
+      rerere.enable = true;
     };
     userEmail = email;
     userName = name;
