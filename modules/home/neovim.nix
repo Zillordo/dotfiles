@@ -1,7 +1,7 @@
-{ pkgs, config, ... }:
-{
+{ pkgs, config, inputs, ... }: {
   programs.neovim = {
     enable = true;
+    package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
@@ -29,9 +29,8 @@
 
   xdg.configFile = {
     nvim = {
-      source =
-        config.lib.file.mkOutOfStoreSymlink
-          "${config.home.homeDirectory}/.config/dotfiles/dotfiles/nvim";
+      source = config.lib.file.mkOutOfStoreSymlink
+        "${config.home.homeDirectory}/.config/dotfiles/dotfiles/nvim";
       recursive = true;
     };
   };

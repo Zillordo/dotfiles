@@ -21,6 +21,7 @@ in {
     ../modules/home/terminals/kitty.nix
     ../modules/home/rofi.nix
     ../modules/home/work/packages.nix
+    ../modules/home/atuin.nix
   ];
 
   news.display = "show";

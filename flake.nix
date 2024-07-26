@@ -11,19 +11,21 @@
         config.allowUnfree = true;
       };
       asztal = pkgs.callPackage ./dotfiles/ags { inherit inputs; };
-    in
-    {
+      overlays = [ inputs.neovim-nightly-overlay.overlays.default ];
+    in {
       nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = { inherit inputs username hostname asztal; };
         modules = [ ./nixos/configuration.nix ];
       };
 
-      homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        extraSpecialArgs = { inherit inputs username asztal; };
-        modules = [ ./home-manager/home.nix ];
-      };
+      homeConfigurations.${username} =
+        home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          extraSpecialArgs = { inherit inputs username asztal; };
+          modules =
+            [ ./home-manager/home.nix { nixpkgs.overlays = overlays; } ];
+        };
 
       packages.${system}.default = asztal;
     };
@@ -31,6 +33,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nur.url = "github:nix-community/NUR";
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
 
     home-manager = {
       url = "github:nix-community/home-manager";

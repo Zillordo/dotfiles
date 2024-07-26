@@ -32,7 +32,7 @@ class Recorder extends Service {
     Utils.ensureDirectory(this.#recordings);
     this.#file = `${this.#recordings}/${now()}.mp4`;
     sh(
-      `wf-recorder -g ${await sh("slurp")} -f ${this.#file} --pixel-format yuv420p`,
+      `wf-recorder -g "${await sh("slurp")}" -f ${this.#file} --pixel-format yuv420p -o HDMI-A-1 `,
     );
 
     this.recording = true;

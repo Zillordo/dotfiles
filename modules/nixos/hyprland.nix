@@ -10,9 +10,7 @@
   xdg.portal = {
     enable = true;
     wlr.enable = true;
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-gtk
-    ];
+    extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
   };
 
   security = {
@@ -20,29 +18,30 @@
     pam.services.ags = { };
   };
 
-  environment.systemPackages = with pkgs; with gnome; [
-    rofi-wayland
-    gnome.adwaita-icon-theme
-    loupe
-    adwaita-icon-theme
-    nautilus
-    baobab
-    gnome-text-editor
-    gnome-calendar
-    gnome-boxes
-    gnome-system-monitor
-    gnome-control-center
-    gnome-weather
-    gnome-calculator
-    gnome-clocks
-    gnome-software # for flatpak
-    wl-gammactl
-    wl-clipboard
-    wayshot
-    pavucontrol
-    brightnessctl
-    swww
-  ];
+  environment.systemPackages = with pkgs;
+    with gnome; [
+      rofi-wayland
+      gnome.adwaita-icon-theme
+      loupe
+      adwaita-icon-theme
+      nautilus
+      baobab
+      gnome-text-editor
+      gnome-calendar
+      gnome-boxes
+      gnome-system-monitor
+      gnome-control-center
+      gnome-weather
+      gnome-calculator
+      gnome-clocks
+      gnome-software # for flatpak
+      wl-gammactl
+      wl-clipboard
+      wayshot
+      pavucontrol
+      brightnessctl
+      swww
+    ];
 
   systemd = {
     user.services.polkit-gnome-authentication-agent-1 = {
@@ -52,7 +51,8 @@
       after = [ "graphical-session.target" ];
       serviceConfig = {
         Type = "simple";
-        ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+        ExecStart =
+          "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
         Restart = "on-failure";
         RestartSec = 1;
         TimeoutStopSec = 10;
@@ -84,9 +84,7 @@
     '';
   };
 
-  systemd.tmpfiles.rules = [
-    "d '/var/cache/greeter' - greeter greeter - -"
-  ];
+  systemd.tmpfiles.rules = [ "d '/var/cache/greeter' - greeter greeter - -" ];
 
   system.activationScripts.wallpaper = ''
     PATH=$PATH:${pkgs.busybox}/bin:${pkgs.jq}/bin

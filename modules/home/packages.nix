@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   xdg.desktopEntries = {
     "lf" = {
       name = "lf";
@@ -7,31 +6,34 @@
     };
   };
 
-  home.packages = with pkgs; with nodePackages_latest; with gnome; [
-    # gui
-    obsidian
-    spotify
-    whatsapp-for-linux
-    caprine-bin #facebook messanger app for linux
+  home.packages = with pkgs;
+    with nodePackages_latest;
+    with gnome; [
+      # gui
+      obsidian
+      spotify
+      whatsapp-for-linux
+      caprine-bin # facebook messanger app for linux
+      totem # video player from gnome
 
-    # tools
-    bat
-    ripgrep
-    fzf
-    libnotify
-    killall
-    zip
-    unzip
-    glib
-    dust
-    btop
-    tldr
-    tokei
+      # tools
+      bat
+      ripgrep
+      fzf
+      libnotify
+      killall
+      zip
+      unzip
+      glib
+      dust
+      btop
+      tldr
+      tokei
 
-    # some language tools needed for vim or other apps I use
-    nodejs
-    gjs
-    cargo
-    gcc
-  ];
+      # some language tools needed for vim or other apps I use
+      nodejs
+      gjs
+      cargo
+      gcc
+    ];
 }
