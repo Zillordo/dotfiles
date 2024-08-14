@@ -2,3 +2,8 @@
 .envr
 
 ./nixos/hardware-configuration.nix
+
+node_modules
+types
+bun.lockb
+

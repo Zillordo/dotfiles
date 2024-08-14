@@ -14,16 +14,6 @@ let
   browser = "firefox";
   mod = "SUPER";
 in {
-  xdg.desktopEntries."org.gnome.Settings" = {
-    name = "Settings";
-    comment = "Gnome Control Center";
-    icon = "org.gnome.Settings";
-    exec =
-      "env XDG_CURRENT_DESKTOP=gnome ${pkgs.gnome.gnome-control-center}/bin/gnome-control-center";
-    categories = [ "X-Preferences" ];
-    terminal = false;
-  };
-
   wayland.windowManager.hyprland = {
     enable = true;
     package = hyprland;
@@ -82,8 +72,7 @@ in {
         (f "pavucontrol")
         (f "nm-connection-editor")
         (f "blueberry.py")
-        (f "org.gnome.Settings")
-        (f "org.gnome.design.Palette")
+        (f "org./nome.design.Palette")
         (f "Color Picker")
         (f "xdg-desktop-portal")
         (f "xdg-desktop-portal-gnome")
