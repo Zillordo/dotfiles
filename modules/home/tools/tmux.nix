@@ -93,7 +93,7 @@ let
 in {
   programs.tmux = {
     enable = true;
-    plugins = with pkgs.tmuxPlugins; [ vim-tmux-navigator yank ];
+    plugins = with pkgs.tmuxPlugins; [ vim-tmux-navigator yank session-wizard ];
     baseIndex = 1;
     escapeTime = 0;
     keyMode = "vi";
