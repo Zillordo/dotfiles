@@ -2,27 +2,7 @@
 let homeDirectory = "/home/${username}";
 in {
   # You can import other home-manager modules here
-  imports = [
-    # If you want to use home-manager modules from other flakes (such as nix-colors):
-    # inputs.nix-colors.homeManagerModule
-    ../modules/home/zoxide.nix
-    ../modules/home/zsh.nix
-    ../modules/home/neovim.nix
-    ../modules/home/hyprland.nix
-    ../modules/home/starship.nix
-    ../modules/home/git.nix
-    ../modules/home/tmux.nix
-    ../modules/home/packages.nix
-    ../modules/home/lf.nix
-    ../modules/home/browsers/default.nix
-    ../modules/home/browsers/brave.nix
-    ../modules/home/ags.nix
-    ../modules/home/direnv.nix
-    ../modules/home/terminals/kitty.nix
-    ../modules/home/rofi.nix
-    ../modules/home/work/packages.nix
-    ../modules/home/atuin.nix
-  ];
+  imports = [ ../modules/home ];
 
   news.display = "show";
 

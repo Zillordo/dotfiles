@@ -8,8 +8,7 @@ let
     left = "";
     right = "";
   };
-in
-{
+in {
   programs.starship = {
     enable = true;
     settings = {
@@ -31,10 +30,10 @@ in
         "$status"
         "$line_break"
         "[❯](bold purple)"
-        ''''${custom.space}''
+        "\${custom.space}"
       ];
       custom.space = {
-        when = ''! test $env'';
+        when = "! test $env";
         format = "  ";
       };
       continuation_prompt = "∙  ┆ ";
@@ -56,7 +55,8 @@ in
       };
       nix_shell = {
         disabled = false;
-        format = "[${pad.left}](fg:white)[ ](bg:white fg:black)[${pad.right}](fg:white) ";
+        format =
+          "[${pad.left}](fg:white)[ ](bg:white fg:black)[${pad.right}](fg:white) ";
       };
       container = {
         symbol = " 󰏖";

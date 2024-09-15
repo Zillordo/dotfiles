@@ -1,4 +1,4 @@
-{ inputs, pkgs, asztal, ... }: {
+{ inputs, pkgs, asztal, config, ... }: {
   imports = [
     inputs.ags.homeManagerModules.default
     inputs.astal.homeManagerModules.default
@@ -21,18 +21,18 @@
     pavucontrol
     networkmanager
     gtk3
+    networkmanagerapplet
   ];
 
   programs.astal = {
     enable = true;
-    extraPackages = with pkgs; [
-      libadwaita
-    ];
+    extraPackages = with pkgs; [ libadwaita ];
   };
 
   programs.ags = {
     enable = true;
-    configDir = ../../dotfiles/ags;
+    configDir = config.lib.file.mkOutOfStoreSymlink
+      "${config.home.homeDirectory}/.config/dotfiles/dotfiles/ags";
     # extraPackages = with pkgs; [
     #   accountsservice
     # ];
