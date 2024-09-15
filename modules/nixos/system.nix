@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ inputs, pkgs, ... }: {
   documentation.nixos.enable = true;
   nixpkgs.config.allowUnfree = true;
 
@@ -10,7 +10,6 @@
   # camera
   programs.droidcam.enable = true;
 
-
   # dconf
   programs.dconf.enable = true;
 
@@ -20,13 +19,15 @@
     neovim
     git
     wget
+    # zen browser (remove when normal support is available)
+    inputs.zen-browser.packages.${pkgs.system}.default
   ];
 
   # services
   services = {
     xserver = {
       enable = true;
-      excludePackages = [pkgs.xterm];
+      excludePackages = [ pkgs.xterm ];
     };
     printing.enable = true;
     flatpak.enable = true;
@@ -43,7 +44,6 @@
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
 
-
   # bluetooth
   hardware.bluetooth = {
     enable = true;
@@ -51,10 +51,9 @@
     settings.General.Experimental = true;
   };
 
-
   boot = {
     tmp.cleanOnBoot = true;
-    supportedFilesystems = ["ntfs"];
+    supportedFilesystems = [ "ntfs" ];
     loader.grub = {
       enable = true;
       device = "/dev/sda";

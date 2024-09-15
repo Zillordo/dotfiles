@@ -11,7 +11,7 @@ let
   rofi = "${pkgs.rofi-wayland}/bin/rofi";
 
   terminal = "kitty";
-  browser = "brave";
+  browser = "zen";
   mod = "SUPER";
 in {
   xdg.desktopEntries."org.gnome.Settings" = {
@@ -40,7 +40,8 @@ in {
       exec-once =
         [ "ags -b hypr" "hyprctl setcursor Qogir 24" "transmission-gtk" ];
 
-      monitor = [ "DP-3,highres,0x0,1" "HDMI-A-1,highres,1920x0,1" ];
+      monitor =
+        [ "DP-1,1920x1080@240,0x0,1" "HDMI-A-1,1920x1080@144,1920x0,1" ];
 
       workspace = [
         "r[1-3], monitor:DP-3, persistant:true"

@@ -14,6 +14,7 @@
     ../modules/nixos/work/extra-hosts.nix
     ../modules/nixos/nix-helper.nix
     ../modules/nixos/system.nix
+    ../modules/nixos/steam.nix
   ];
 
   # This will add each flake input as a registry

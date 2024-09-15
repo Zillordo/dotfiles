@@ -23,5 +23,10 @@ return {
         path = "~/Documents/Personal",
       },
     },
+    templates = {
+      folder = "Templates",
+      datte_fromat = "%d-%m-%Y",
+      time_format = "%H:%M",
+    }
   },
 }

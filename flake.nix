@@ -31,6 +31,7 @@
     };
 
   inputs = {
+    zen-browser.url = "github:MarceColl/zen-browser-flake";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nur.url = "github:nix-community/NUR";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
