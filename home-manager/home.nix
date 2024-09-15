@@ -47,13 +47,6 @@ in {
     sessionPath = [ "$HOME/.local/bin" ];
   };
 
-  services = {
-    kdeconnect = {
-      enable = true;
-      indicator = true;
-    };
-  };
-
   # Enable home-manager
   programs.home-manager.enable = true;
 
