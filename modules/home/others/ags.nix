@@ -1,11 +1,7 @@
 { inputs, pkgs, asztal, config, ... }: {
-  imports = [
-    inputs.ags.homeManagerModules.default
-    inputs.astal.homeManagerModules.default
-  ];
+  imports = [ inputs.ags.homeManagerModules.default ];
 
   home.packages = with pkgs; [
-    asztal
     bun
     dart-sass
     fd
@@ -24,17 +20,10 @@
     networkmanagerapplet
   ];
 
-  programs.astal = {
-    enable = true;
-    extraPackages = with pkgs; [ libadwaita ];
-  };
-
   programs.ags = {
     enable = true;
     configDir = config.lib.file.mkOutOfStoreSymlink
       "${config.home.homeDirectory}/.config/dotfiles/dotfiles/ags";
-    # extraPackages = with pkgs; [
-    #   accountsservice
-    # ];
+    extraPackages = with pkgs; [ accountsservice ];
   };
 }

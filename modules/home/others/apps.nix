@@ -7,5 +7,6 @@
       whatsapp-for-linux
       caprine-bin # facebook messanger app for linux
       totem # video player from gnome
+      zoom-us
     ];
 }

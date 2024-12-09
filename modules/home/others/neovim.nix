@@ -10,22 +10,43 @@
     withNodeJs = true;
     withPython3 = true;
 
-    extraPackages = with pkgs; [
-      git
-      gcc
-      gnumake
-      unzip
-      wget
-      curl
-      tree-sitter
-      ripgrep
-      fd
-      fzf
-      cargo
-      lazygit
-      luajitPackages.jsregexp
+    plugins = with pkgs.vimPlugins; [
+      nvim-treesitter.withAllGrammars
+      nvim-web-devicons
+      telescope-nvim
+      telescope-fzy-native-nvim
+      undotree
+      which-key-nvim
+      nvim-cmp
+      cmp-buffer
+      cmp-path
+      cmp-zsh
+      cmp-nvim-lua
+      nvim-lspconfig
+      cmp-nvim-lsp
+      none-ls-nvim
     ];
   };
+
+  home.packages = with pkgs; [
+    git
+    gcc
+    gnumake
+    unzip
+    wget
+    curl
+    ripgrep
+    fd
+    fzf
+    cargo
+    lazygit
+    luajitPackages.jsregexp
+    #nix
+    statix
+    deadnix
+    alejandra
+    nil
+  ];
 
   xdg.configFile = {
     nvim = {

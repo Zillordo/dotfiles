@@ -32,5 +32,12 @@
     lib.mkDefault config.hardware.enableRedistributableFirmware;
 
   services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.nvidia.modesetting.enable = true;
+  hardware.nvidia = {
+    open = true;
+    modesetting.enable = true;
+    powerManagement.enable = false;
+    powerManagement.finegrained = false;
+    nvidiaSettings = true;
+    package = config.boot.kernelPackages.nvidiaPackages.beta;
+  };
 }

@@ -2,15 +2,19 @@
   "$schema": "https://raw.githubusercontent.com/jetpack-io/devbox/0.10.2/.schema/devbox.schema.json",
   "packages": [
     "nixpkgs-fmt",
+    "statix",
+    "deadnix",
+    "alejandra",
     "nil",
     "nixfmt",
     "cachix",
     "lorri",
     "niv",
     "statix",
-    "nls",
     "vulnix",
-    "haskellPackages.dhall-nix"
+    "haskellPackages.dhall-nix",
+    "lua",
+    "lua-language-server"
   ],
   "shell": {
     "scripts": {

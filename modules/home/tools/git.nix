@@ -1,8 +1,7 @@
 let
   email = "konecnyallan@gmail.com";
   name = "Zillordo";
-in
-{
+in {
   programs.git = {
     enable = true;
     extraConfig = {
@@ -10,8 +9,9 @@ in
       core.editor = "nvim";
       credential.helper = "store";
       github.user = name;
-      push.autoSetupRemote = true;
       rerere.enable = true;
+      rebase = { udpateRefs = true; };
+      push = { autoSetupRemote = true; };
     };
     userEmail = email;
     userName = name;

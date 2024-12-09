@@ -2,11 +2,11 @@
 
 {
   programs.zsh.enable = true;
-  # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.allank = {
     isNormalUser = true;
     description = "allank";
-    extraGroups = [ "networkmanager" "input" "wheel" "video" "audio" "tss" ];
+    extraGroups =
+      [ "networkmanager" "input" "wheel" "video" "audio" "tss" "docker" ];
     shell = pkgs.zsh;
   };
 

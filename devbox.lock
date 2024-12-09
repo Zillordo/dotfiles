@@ -1,8 +1,16 @@
 {
   "lockfile_version": "1",
   "packages": {
+    "alejandra": {
+      "resolved": "github:NixOS/nixpkgs/75a52265bda7fd25e06e3a67dee3f0354e73243c#alejandra",
+      "source": "nixpkg"
+    },
     "cachix": {
       "resolved": "github:NixOS/nixpkgs/75a52265bda7fd25e06e3a67dee3f0354e73243c#cachix",
+      "source": "nixpkg"
+    },
+    "deadnix": {
+      "resolved": "github:NixOS/nixpkgs/75a52265bda7fd25e06e3a67dee3f0354e73243c#deadnix",
       "source": "nixpkg"
     },
     "haskellPackages.dhall-nix": {
@@ -11,6 +19,14 @@
     },
     "lorri": {
       "resolved": "github:NixOS/nixpkgs/75a52265bda7fd25e06e3a67dee3f0354e73243c#lorri",
+      "source": "nixpkg"
+    },
+    "lua": {
+      "resolved": "github:NixOS/nixpkgs/75a52265bda7fd25e06e3a67dee3f0354e73243c#lua",
+      "source": "nixpkg"
+    },
+    "lua-language-server": {
+      "resolved": "github:NixOS/nixpkgs/75a52265bda7fd25e06e3a67dee3f0354e73243c#lua-language-server",
       "source": "nixpkg"
     },
     "nil": {
@@ -27,10 +43,6 @@
     },
     "nixpkgs-fmt": {
       "resolved": "github:NixOS/nixpkgs/75a52265bda7fd25e06e3a67dee3f0354e73243c#nixpkgs-fmt",
-      "source": "nixpkg"
-    },
-    "nls": {
-      "resolved": "github:NixOS/nixpkgs/75a52265bda7fd25e06e3a67dee3f0354e73243c#nls",
       "source": "nixpkg"
     },
     "statix": {

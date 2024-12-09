@@ -1,1 +1,1 @@
-{ imports = [ ./extra-hosts.nix ]; }
+{ imports = [ ./extra-hosts.nix ./docker.nix ]; }

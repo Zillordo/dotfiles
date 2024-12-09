@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs, ... }: {
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -13,6 +13,12 @@
     shellAliases = {
       updaten = "sudo nixos-rebuild switch";
       updateh = "home-manager switch";
+      ns = "nix-shell";
     };
+
+    # vim mode
+    initExtra = ''
+      source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+    '';
   };
 }

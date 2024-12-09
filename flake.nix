@@ -1,7 +1,7 @@
 {
   description = "Home Manager and NixOS configuration of Allan";
 
-  outputs = { home-manager, nixpkgs, ... }@inputs:
+  outputs = { self, home-manager, nixpkgs, ... }@inputs:
     let
       username = "allank";
       hostname = "nixos";
@@ -15,7 +15,10 @@
     in {
       nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit inputs username hostname asztal; };
+        specialArgs = {
+          inherit inputs username hostname;
+          asztal = self.packages.${system}.default;
+        };
         modules = [ ./nixos/configuration.nix ];
       };
 
@@ -32,7 +35,7 @@
 
   inputs = {
     zen-browser.url = "github:MarceColl/zen-browser-flake";
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
     nur.url = "github:nix-community/NUR";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
 
@@ -41,7 +44,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     hyprland-plugins.url = "github:hyprwm/hyprland-plugins";
 
     split-monitor-workspaces = {
