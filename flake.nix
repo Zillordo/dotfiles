@@ -53,7 +53,7 @@
     };
 
     matugen.url = "github:InioX/matugen";
-    ags.url = "github:Aylur/ags";
+    ags.url = "github:Aylur/ags/v1";
     astal.url = "github:Aylur/astal";
     stm.url = "github:Aylur/stm";
 
