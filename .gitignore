@@ -2,3 +2,6 @@
 .envr
 
 ./nixos/hardware-configuration.nix
+
+@girs/
+gi.d.ts
