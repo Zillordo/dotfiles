@@ -37,8 +37,10 @@
     '';
 
     # Enable automatic login for the user
-    xserver.displayManager.autoLogin.enable = true;
-    xserver.displayManager.autoLogin.user = "allank";
+    displayManager.autoLogin = {
+      enable = true;
+      user = "allank";
+    };
   };
 
   # Workaround for gnome autologin

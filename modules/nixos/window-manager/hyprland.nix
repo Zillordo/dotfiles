@@ -20,23 +20,22 @@
     pam.services.ags = { };
   };
 
-  environment.systemPackages = with pkgs;
-    with gnome; [
-      rofi-wayland
-      gnome.adwaita-icon-theme
-      loupe
-      adwaita-icon-theme
-      nautilus
-      baobab
-      gnome-calculator
-      gnome-clocks
-      wl-gammactl
-      wl-clipboard
-      wayshot
-      pavucontrol
-      brightnessctl
-      swww
-    ];
+  environment.systemPackages = with pkgs; [
+    rofi-wayland
+    adwaita-icon-theme
+    loupe
+    adwaita-icon-theme
+    nautilus
+    baobab
+    gnome-calculator
+    gnome-clocks
+    wl-gammactl
+    wl-clipboard
+    wayshot
+    pavucontrol
+    brightnessctl
+    swww
+  ];
 
   systemd = {
     user.services.polkit-gnome-authentication-agent-1 = {

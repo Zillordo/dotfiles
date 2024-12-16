@@ -1,7 +1,7 @@
 {
   description = "Home Manager and NixOS configuration of Allan";
 
-  outputs = { self, home-manager, nixpkgs, ... }@inputs:
+  outputs = { self, home-manager, nixpkgs, zen-browser, ... }@inputs:
     let
       username = "allank";
       hostname = "nixos";
@@ -25,7 +25,7 @@
       homeConfigurations.${username} =
         home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-          extraSpecialArgs = { inherit inputs username asztal; };
+          extraSpecialArgs = { inherit inputs username asztal system; };
           modules =
             [ ./home-manager/home.nix { nixpkgs.overlays = overlays; } ];
         };
@@ -34,8 +34,8 @@
     };
 
   inputs = {
-    zen-browser.url = "github:MarceColl/zen-browser-flake";
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
     nur.url = "github:nix-community/NUR";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
 
