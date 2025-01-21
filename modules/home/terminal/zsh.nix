@@ -14,6 +14,7 @@
       mux = "tmux";
       pnp = "pnpm";
       ls = "eza";
+      fm = "yazi";
     };
   };
 }

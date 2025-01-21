@@ -101,6 +101,7 @@ in {
         "SHIFT,Print,    ${e} -r 'recorder.screenshot(true)'"
         "${mod}, Return, exec, ${terminal}"
         "${mod}, B, exec, ${browser}"
+        "${mod} CTRL, B, exec, ${browser} --private-window"
         "${mod} SHIFT, P, ${e} -t powermenu"
         "${mod}, N, ${e} -t datemenu"
         "${mod}, Comma, ${e} -t settings-dialog"
