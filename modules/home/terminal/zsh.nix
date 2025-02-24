@@ -14,6 +14,8 @@
       updaten = "sudo nixos-rebuild switch";
       updateh = "home-manager switch";
       ns = "nix-shell";
+      mux = "tmux";
+      fm = "yazi";
     };
 
     # vim mode

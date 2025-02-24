@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  imports = [ ./direnv.nix ./git.nix ./lf.nix ./tmux.nix ./zoxide.nix ];
+  imports = [ ./direnv.nix ./git.nix ./tmux.nix ./zoxide.nix ./yazi.nix ];
 
   home.packages = with pkgs;
     with nodePackages_latest;
@@ -29,6 +29,8 @@
       gjs
       cargo
       gcc
+
+      netcat-openbsd
     ];
 }
 

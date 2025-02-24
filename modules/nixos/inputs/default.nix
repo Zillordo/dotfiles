@@ -1,1 +1,1 @@
-{ imports = [ ./audio.nix ./bluetooth.nix ./camera.nix ]; }
+{ imports = [ ./audio.nix ./bluetooth.nix ]; }

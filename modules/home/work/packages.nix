@@ -4,5 +4,6 @@
     with gnome; [
       slack
       devbox
+      dbeaver-bin
     ];
 }

@@ -4,7 +4,6 @@
       obsidian
       spotify
       whatsapp-for-linux
-      caprine-bin # facebook messanger app for linux
       vlc # video player
     ];
 }

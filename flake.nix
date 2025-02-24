@@ -1,23 +1,28 @@
 {
   description = "Home Manager and NixOS configuration of Allan";
 
-  outputs = { self, home-manager, nixpkgs, zen-browser, ... }@inputs:
+  outputs = { self, home-manager, nixpkgs, zen-browser, unstable, ... }@inputs:
     let
       username = "allank";
       hostname = "nixos";
       system = "x86_64-linux";
+      overlays = [ inputs.neovim-nightly-overlay.overlays.default ];
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
       };
+      unstablePkgs = import unstable {
+        inherit system;
+        config.allowUnfree = true;
+      };
       asztal = pkgs.callPackage ./dotfiles/ags { inherit inputs; };
-      overlays = [ inputs.neovim-nightly-overlay.overlays.default ];
     in {
       nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = {
           inherit inputs username hostname;
           asztal = self.packages.${system}.default;
+          unstable = unstablePkgs;
         };
         modules = [ ./nixos/configuration.nix ];
       };
@@ -36,8 +41,10 @@
   inputs = {
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
+    unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nur.url = "github:nix-community/NUR";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    ghostty = { url = "github:ghostty-org/ghostty"; };
 
     home-manager = {
       url = "github:nix-community/home-manager";

@@ -10,7 +10,7 @@ let
   pactl = "${pkgs.pulseaudio}/bin/pactl";
   rofi = "${pkgs.rofi-wayland}/bin/rofi";
 
-  terminal = "kitty";
+  terminal = "ghostty";
   browser = "zen";
   mod = "SUPER";
 in {
