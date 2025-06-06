@@ -33,6 +33,7 @@
 
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.graphics.enable = true;
+  hardware.opengl.enable = true;
   hardware.nvidia = {
     open = true;
     modesetting.enable = true;
@@ -40,5 +41,6 @@
     powerManagement.finegrained = false;
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.beta;
+    nvidiaPersistenced = true;
   };
 }

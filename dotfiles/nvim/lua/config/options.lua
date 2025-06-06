@@ -5,3 +5,5 @@ vim.o.termguicolors = true
 
 -- needed for go templates
 vim.filetype.add({ extension = { templ = "templ", nix = "nix" } })
+
+vim.g.snacks_animate = false

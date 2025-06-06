@@ -1,5 +1,6 @@
 { pkgs, ... }:
 let
+  resurrectDirPath = "~/.config/tmux/ressurect";
   bg = "default";
   fg = "default";
   bg2 = "brightblack";
@@ -95,9 +96,24 @@ in {
     enable = true;
     plugins = with pkgs.tmuxPlugins; [
       vim-tmux-navigator
-      yank
-      continuum
       session-wizard
+      {
+        plugin = resurrect;
+        extraConfig = ''
+          set -g @resurrect-strategy-vim 'session'
+          set -g @resurrect-strategy-nvim 'session'
+          set -g @resurrect-capture-pane-contents 'on'
+          set -g @resurrect-save-command-strategy 'ps'
+        '';
+      }
+      {
+        plugin = continuum;
+        extraConfig = ''
+          set -g @continuum-restore 'on'
+          set -g @continuum-save-interval '10'
+        '';
+      }
+      yank
     ];
     baseIndex = 1;
     escapeTime = 0;
@@ -105,7 +121,7 @@ in {
     mouse = true;
     shell = "${pkgs.zsh}/bin/zsh";
     extraConfig = ''
-      set-option -sa terminal-overrides ",kitty*:Tc"
+      set-option -sa terminal-overrides ",ghostty*:Tc"
       bind v copy-mode
       bind-key -T copy-mode-vi v send-keys -X begin-selection
       bind-key -T copy-mode-vi C-v send-keys -X rectangle-toggle

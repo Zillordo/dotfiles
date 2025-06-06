@@ -30,7 +30,10 @@
       homeConfigurations.${username} =
         home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-          extraSpecialArgs = { inherit inputs username asztal system; };
+          extraSpecialArgs = {
+            inherit inputs username asztal system;
+            unstable = unstablePkgs;
+          };
           modules =
             [ ./home-manager/home.nix { nixpkgs.overlays = overlays; } ];
         };
@@ -40,7 +43,7 @@
 
   inputs = {
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nur.url = "github:nix-community/NUR";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
