@@ -22,8 +22,9 @@ $env.config.show_banner = false
 $env.config.buffer_editor = '/usr/bin/nvim'
 
 
+source ~/.local/share/atuin/init.nu
+source ~/.config/omarchy/current/theme/nushell.theme.nu
 source ./aliases.nu
-source ./kangawa-theme.nu
 source ~/.zoxide.nu
 source ./starship.nu
 
