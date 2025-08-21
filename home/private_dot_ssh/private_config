@@ -1,0 +1,13 @@
+# Personal account
+Host personal-github
+HostName github.com
+IdentityFile ~/.ssh/id_personal
+User git
+PreferredAuthentications publickey
+
+# Work account
+Host work-github
+HostName github.com
+IdentityFile ~/.ssh/id_work
+User meiroio
+PreferredAuthentications publickey

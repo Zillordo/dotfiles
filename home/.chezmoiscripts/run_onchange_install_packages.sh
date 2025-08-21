@@ -18,6 +18,8 @@ packages=(
   "tmux-plugin-manager"
   "nodejs"
   "direnv"
+  "age"
+  "atuin"
 )
 
 # Check if yay is installed
@@ -42,3 +44,5 @@ for package in "${packages[@]}"; do
     echo "  $package: ❌ Not found"
   fi
 done
+
+nu ~/.local/share/chezmoi/scripts/setup_atuin.nu

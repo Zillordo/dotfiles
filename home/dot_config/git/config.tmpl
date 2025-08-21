@@ -1,0 +1,17 @@
+[color]
+	ui = true
+[core]
+	editor = "nvim"
+[credential]
+	helper = "store"
+[github]
+	user = "{{ .github_user }}"
+[push]
+	autoSetupRemote = true
+[rebase]
+	updateRefs = true
+[rerere]
+	enable = true
+[user]
+	email = "{{ .email }}"
+	name = "{{ .github_user }}"
