@@ -1,0 +1,74 @@
+# This is the configuration file for Ghostty.
+#
+# This template file has been automatically created at the following
+# path since Ghostty couldn't find any existing config files on your system:
+#
+#   /home/allan/.config/ghostty/config
+#
+# The template does not set any default options, since Ghostty ships
+# with sensible defaults for all options. Users should only need to set
+# options that they want to change from the default.
+#
+# Run `ghostty +show-config --default --docs` to view a list of
+# all available config options and their default values.
+#
+# Additionally, each config option is also explained in detail
+# on Ghostty's website, at https://ghostty.org/docs/config.
+#
+# Ghostty can reload the configuration while running by using the menu
+# options or the bound key (default: Command + Shift + comma on macOS and
+# Control + Shift + comma on other platforms). Not all config options can be
+# reloaded while running; some only apply to new windows and others may require
+# a full restart to take effect.
+
+# Config syntax crash course
+# ==========================
+# # The config file consists of simple key-value pairs,
+# # separated by equals signs.
+# font-family = Iosevka
+# window-padding-x = 2
+#
+# # Spacing around the equals sign does not matter.
+# # All of these are identical:
+# key=value
+# key= value
+# key =value
+# key = value
+#
+# # Any line beginning with a # is a comment. It's not possible to put
+# # a comment after a config option, since it would be interpreted as a
+# # part of the value. For example, this will have a value of "#123abc":
+# background = #123abc
+#
+# # Empty values are used to reset config keys to default.
+# key =
+#
+# # Some config options have unique syntaxes for their value,
+# # which is explained in the docs for that config option.
+# # Just for example:
+# resize-overlay-duration = 4s 200ms
+
+command = /usr/bin/nu
+
+palette = 0=#0d0c0c
+palette = 1=#c4746e
+palette = 2=#8a9a7b
+palette = 3=#c4b28a
+palette = 4=#8ba4b0
+palette = 5=#a292a3
+palette = 6=#8ea4a2
+palette = 7=#c8c093
+palette = 8=#a6a69c
+palette = 9=#e46876
+palette = 10=#87a987
+palette = 11=#e6c384
+palette = 12=#7fb4ca
+palette = 13=#938aa9
+palette = 14=#7aa89f
+palette = 15=#c5c9c5
+
+background = 181616
+foreground = c5c9c5
+cursor-color = c8c093
+selection-background = 2d4f67
+selection-foreground = c8c093
