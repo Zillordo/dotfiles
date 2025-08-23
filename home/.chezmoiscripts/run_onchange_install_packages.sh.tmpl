@@ -1,0 +1,35 @@
+#!/bin/bash
+set -e
+
+PACKAGES_FILE="{{ .chezmoi.sourceDir }}/dot_config/install/packages.txt"
+
+# PACKAGES_SHA256: {{ include "dot_config/install/packages.txt" | sha256sum }}
+
+if ! command -v yay >/dev/null 2>&1; then
+  echo "Error: yay not found in PATH. Install yay first."
+  exit 1
+fi
+
+# Ensure packages file exists (chezmoi will place it on apply)
+if [ ! -f "$PACKAGES_FILE" ]; then
+  echo "Packages file not present yet; skipping for now."
+  exit 0
+fi
+
+# Warm sudo so yay can escalate for repo packages
+if command -v sudo >/dev/null 2>&1; then
+  sudo -v || true
+fi
+
+# Read packages (ignore comments and empty lines) into an array
+mapfile -t packages < <(awk 'BEGIN{FS="#"} {gsub(/^\s+|\s+$/, ""); if ($1!="") print $1}' "$PACKAGES_FILE")
+
+if [ ${#packages[@]} -eq 0 ]; then
+  echo "No packages listed; nothing to do."
+  exit 0
+fi
+
+echo "Installing packages with yay: ${packages[*]}"
+yay -S --needed --noconfirm --sudoloop "${packages[@]}"
+
+echo "Package installation completed."

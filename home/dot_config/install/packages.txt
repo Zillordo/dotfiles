@@ -1,0 +1,18 @@
+# edit this file; changes will auto-trigger the install
+zoxide
+zen-browser-bin
+tmux
+nushell
+starship
+ghostty
+slack-desktop-wayland
+obsidian-bin
+spotify
+tmux-plugin-manager
+nodejs
+direnv
+age
+atuin
+asdf-vm
+
+

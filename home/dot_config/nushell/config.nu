@@ -27,4 +27,5 @@ source ~/.config/omarchy/current/theme/nushell.theme.nu
 source ./aliases.nu
 source ~/.zoxide.nu
 source ./starship.nu
+source ./asdf.nu
 
