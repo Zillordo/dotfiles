@@ -4,6 +4,7 @@ HostName github.com
 IdentityFile ~/.ssh/id_personal
 User git
 PreferredAuthentications publickey
+AddKeysToAgent yes
 
 # Work account
 Host work-github
@@ -11,3 +12,4 @@ HostName github.com
 IdentityFile ~/.ssh/id_work
 User meiroio
 PreferredAuthentications publickey
+AddKeysToAgent yes

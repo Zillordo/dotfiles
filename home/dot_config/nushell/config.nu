@@ -27,6 +27,7 @@ source ~/.config/omarchy/current/theme/nushell.theme.nu
 source ./aliases.nu
 source ~/.zoxide.nu
 source ./starship.nu
+source ./ssh-agent.nu
 
 use ($nu.default-config-dir | path join mise.nu)
 
