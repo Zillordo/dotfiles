@@ -10,9 +10,7 @@ obsidian-bin
 spotify
 tmux-plugin-manager
 nodejs
-direnv
 age
 atuin
-asdf-vm
-
+mise
 

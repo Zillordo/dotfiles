@@ -1,0 +1,9 @@
+[tools]
+go = "latest"
+node = "latest"
+"core:go" = "latest"
+prettier = "latest"
+pnpm = "latest"
+"npm:eslint" = "latest"
+[tasks]
+opensearch_perm = "sudo chown -R 1000:1000 ./raptor/raptor_filesystem/opensearch-data/"

@@ -165,6 +165,15 @@ style = 'bg:color_cyan fg:color_fg0'
 symbol = '󰡨'
 
 [golang]
+detect_files = [
+  "go.mod",
+  "go.sum",
+  "go.work",
+  "glide.yaml",
+  "Gopkg.yml",
+  "Gopkg.lock",
+  ".go-version",
+]
 format = '[ $symbol ($version) ]($style)'
 style = 'bg:color_cyan fg:color_bg0'
 symbol = ''
