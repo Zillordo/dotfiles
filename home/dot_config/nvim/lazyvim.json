@@ -2,6 +2,7 @@
   "extras": [
     "lazyvim.plugins.extras.coding.yanky",
     "lazyvim.plugins.extras.editor.neo-tree",
+    "lazyvim.plugins.extras.lang.nushell",
     "lazyvim.plugins.extras.util.dot"
   ],
   "install_version": 8,

@@ -13,4 +13,5 @@ nodejs
 age
 atuin
 mise
+cursor-bin
 
