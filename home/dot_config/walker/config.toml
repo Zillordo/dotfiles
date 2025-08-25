@@ -100,7 +100,6 @@ prefix = "?"
 [[builtins.websearch.entries]]
 name = "DuckDuckGo"
 url = "https://duckduckgo.com/?q=%TERM%"
-switcher_only = true
 
 [builtins.translation]
 hidden = true
