@@ -6,7 +6,7 @@ nushell
 starship
 ghostty
 slack-desktop-wayland
-obsidian-bin
+obsidian
 spotify
 tmux-plugin-manager
 nodejs
@@ -15,5 +15,5 @@ atuin
 mise
 cursor-bin
 quickshell-git
-tty-material-symbols-variable-git
+ttf-material-symbols-variable-git
 
