@@ -54,6 +54,18 @@ tooltip {
   margin-left: 20px;
 }
 
+#custom-update {
+  font-size: 10px;
+}
+
+#clock {
+  margin-left: 8.75px;
+}
+
+.hidden {
+  opacity: 0;
+}
+
 #taskbar button {
   padding-left: 8px;
   padding-right: 6px;
