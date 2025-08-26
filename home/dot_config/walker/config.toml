@@ -95,7 +95,7 @@ name = "Websearch"
 icon = ""
 placeholder = "Websearch..."
 hidden = false
-prefix = "?"
+prefix = "%"
 
 [[builtins.websearch.entries]]
 name = "DuckDuckGo"
