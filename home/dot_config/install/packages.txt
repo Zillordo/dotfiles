@@ -14,4 +14,6 @@ age
 atuin
 mise
 cursor-bin
+quickshell-git
+tty-material-symbols-variable-git
 
