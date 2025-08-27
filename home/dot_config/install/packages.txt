@@ -16,4 +16,5 @@ mise
 cursor-bin
 quickshell-git
 ttf-material-symbols-variable-git
+ddcutil
 
