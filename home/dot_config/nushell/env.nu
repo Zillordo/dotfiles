@@ -19,5 +19,8 @@
 
 zoxide init nushell --cmd cd | save -f ~/.zoxide.nu
 
+# Add ~/.local/bin to PATH
+$env.PATH = ($env.PATH | split row (char esep) | prepend ($env.HOME | path join .local bin))
+
 let mise_path = $nu.default-config-dir | path join mise.nu
 ^mise activate nu | save $mise_path --force

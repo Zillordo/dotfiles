@@ -1,20 +1,37 @@
 # edit this file; changes will auto-trigger the install
-zoxide
 zen-browser-bin
-tmux
-nushell
-starship
-ghostty
 slack-desktop-wayland
 obsidian
 spotify
-tmux-plugin-manager
-nodejs
-age
-atuin
-mise
+
+#programming
+nushell
 cursor-bin
+nodejs
+
+# terminal
+zoxide
+ghostty
+tmux
+starship
+tmux-plugin-manager
+atuin
+
+#encryption tool
+age
+
+# for per directory dev environment
+mise
+
+# for quickshell
 quickshell-git
 ttf-material-symbols-variable-git
+
+# for birghtness on desktop
 ddcutil
 
+# rollbacks
+btrfs-progs
+snapper
+snap-pac
+grub-btrfs
