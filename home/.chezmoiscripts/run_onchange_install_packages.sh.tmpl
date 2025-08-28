@@ -1,19 +1,16 @@
 #!/bin/bash
 set -e
 
-PACKAGES_FILE="{{ .chezmoi.sourceDir }}/dot_config/install/packages.txt"
+# Source lists managed in the chezmoi repo (maps to ~/.config/install on apply)
+EXPLICIT_FILE="{{ .chezmoi.sourceDir }}/dot_config/install/packages-explicit.txt"
+AUR_FILE="{{ .chezmoi.sourceDir }}/dot_config/install/packages-aur.txt"
 
-# PACKAGES_SHA256: {{ include "dot_config/install/packages.txt" | sha256sum }}
+# Trigger this script when the generated last-updated file changes in the repo
+# PACKAGES_SHA256: {{ include "dot_config/install/last-updated.txt" | sha256sum }}
 
 if ! command -v yay >/dev/null 2>&1; then
   echo "Error: yay not found in PATH. Install yay first."
   exit 1
-fi
-
-# Ensure packages file exists (chezmoi will place it on apply)
-if [ ! -f "$PACKAGES_FILE" ]; then
-  echo "Packages file not present yet; skipping for now."
-  exit 0
 fi
 
 # Warm sudo so yay can escalate for repo packages
@@ -21,15 +18,83 @@ if command -v sudo >/dev/null 2>&1; then
   sudo -v || true
 fi
 
-# Read packages (ignore comments and empty lines) into an array
-mapfile -t packages < <(awk 'BEGIN{FS="#"} {gsub(/^\s+|\s+$/, ""); if ($1!="") print $1}' "$PACKAGES_FILE")
+declare -a packages
+
+# Helper: read a list file, ignore comments/blank, append to packages
+read_list() {
+  local file="$1"
+  if [ -f "$file" ]; then
+    # shellcheck disable=SC2207
+    mapfile -t tmp < <(awk 'BEGIN{FS="#"} {gsub(/^\s+|\s+$/, ""); if ($1!="") print $1}' "$file")
+    packages+=("${tmp[@]}")
+  fi
+}
+
+read_list "$EXPLICIT_FILE"
+read_list "$AUR_FILE"
+
+# Deduplicate while preserving order
+if [ ${#packages[@]} -gt 0 ]; then
+  declare -A seen
+  dedup=()
+  for p in "${packages[@]}"; do
+    if [[ -n "$p" && -z "${seen[$p]:-}" ]]; then
+      dedup+=("$p")
+      seen[$p]=1
+    fi
+  done
+  packages=("${dedup[@]}")
+fi
 
 if [ ${#packages[@]} -eq 0 ]; then
   echo "No packages listed; nothing to do."
   exit 0
 fi
 
-echo "Installing packages with yay: ${packages[*]}"
-yay -S --needed --noconfirm --sudoloop "${packages[@]}"
+# Filter out packages that are already installed
+echo "Checking which packages are already installed..."
+missing_packages=()
+installed_packages=()
+
+# Get list of installed packages (both repo and AUR)
+installed_list=$(mktemp)
+trap 'rm -f "$installed_list"' EXIT
+
+if [ "$(id -u)" -eq 0 ] && [ -n "${SUDO_USER:-}" ]; then
+  # Run as original user if we're root
+  sudo -u "$SUDO_USER" -E yay -Qq --color=never 2>/dev/null > "$installed_list" || true
+else
+  yay -Qq --color=never 2>/dev/null > "$installed_list" || true
+fi
+
+# Check each package
+for pkg in "${packages[@]}"; do
+  if grep -Fxq "$pkg" "$installed_list"; then
+    installed_packages+=("$pkg")
+  else
+    missing_packages+=("$pkg")
+  fi
+done
+
+# Report what we found
+if [ ${#installed_packages[@]} -gt 0 ]; then
+  echo "Already installed (${#installed_packages[@]}): ${installed_packages[*]}"
+fi
+
+if [ ${#missing_packages[@]} -eq 0 ]; then
+  echo "All packages are already installed. Nothing to do."
+  exit 0
+fi
+
+echo "Installing missing packages (${#missing_packages[@]}): ${missing_packages[*]}"
+
+# Install only the missing packages with optimization flags
+if [ "$(id -u)" -eq 0 ] && [ -n "${SUDO_USER:-}" ]; then
+  # Run yay as the original user
+  sudo -u "$SUDO_USER" -E yay -S --noconfirm --sudoloop --norebuild --noredownload "${missing_packages[@]}"
+else
+  # Run yay normally
+  yay -S --noconfirm --sudoloop --norebuild --noredownload "${missing_packages[@]}"
+fi
 
 echo "Package installation completed."
