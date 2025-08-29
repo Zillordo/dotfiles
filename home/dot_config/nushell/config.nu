@@ -28,6 +28,7 @@ source ./aliases.nu
 source ~/.zoxide.nu
 source ./starship.nu
 source ./ssh-agent.nu
+source ./setup-plugins.nu
 
 use ($nu.default-config-dir | path join mise.nu)
 

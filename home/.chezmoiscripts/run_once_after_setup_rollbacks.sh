@@ -28,9 +28,6 @@ if [[ "${rootfs}" != "btrfs" ]]; then
   exit 0
 fi
 
-log "Enabling Btrfs quota on /."
-sudo btrfs quota enable / 2>/dev/null || true
-
 ensure_snapshots_perms() {
   local path="$1"
   if [[ -d "${path}" ]]; then
@@ -58,15 +55,15 @@ configure_snapper_cfg() {
   [[ -f "${cfg}" ]] || return 0
   set_snapper_opt "${cfg}" ALLOW_USERS "${CURRENT_USER}"
   set_snapper_opt "${cfg}" TIMELINE_CREATE "yes"
-  set_snapper_opt "${cfg}" TIMELINE_LIMIT_HOURLY "8"
-  set_snapper_opt "${cfg}" TIMELINE_LIMIT_DAILY "7"
-  set_snapper_opt "${cfg}" TIMELINE_LIMIT_WEEKLY "4"
-  set_snapper_opt "${cfg}" TIMELINE_LIMIT_MONTHLY "6"
-  set_snapper_opt "${cfg}" TIMELINE_LIMIT_YEARLY "1"
+  set_snapper_opt "${cfg}" TIMELINE_LIMIT_HOURLY "0"
+  set_snapper_opt "${cfg}" TIMELINE_LIMIT_DAILY "0"
+  set_snapper_opt "${cfg}" TIMELINE_LIMIT_WEEKLY "1"
+  set_snapper_opt "${cfg}" TIMELINE_LIMIT_MONTHLY "0"
+  set_snapper_opt "${cfg}" TIMELINE_LIMIT_YEARLY "0"
   set_snapper_opt "${cfg}" NUMBER_CLEANUP "yes"
   set_snapper_opt "${cfg}" NUMBER_MIN_AGE "1800"
-  set_snapper_opt "${cfg}" NUMBER_LIMIT "50"
-  set_snapper_opt "${cfg}" NUMBER_LIMIT_IMPORTANT "10"
+  set_snapper_opt "${cfg}" NUMBER_LIMIT "20"
+  set_snapper_opt "${cfg}" NUMBER_LIMIT_IMPORTANT "5"
 }
 
 # Root config
@@ -109,4 +106,3 @@ else
   warn "snap-pac not installed. Install with: sudo pacman -S snap-pac"
 fi
 log "Snapper rollback setup completed."
-
