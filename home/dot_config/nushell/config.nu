@@ -18,8 +18,16 @@
 #     config nu --doc | nu-highlight | less -R
 
 $env.config.edit_mode = 'vi'
+$env.config.cursor_shape.vi_insert = "line"
+$env.config.cursor_shape.vi_normal = "block"
+
 $env.config.show_banner = false
 $env.config.buffer_editor = '/usr/bin/nvim'
+
+$env.config.completions.algorithm = "fuzzy"
+$env.config.completions.case_sensitive = false
+
+$env.config.table.mode = "light"
 
 
 source ~/.local/share/atuin/init.nu
