@@ -170,16 +170,22 @@ Singleton {
         return fallback;
     }
 
-    function getNetworkIcon(strength: int): string {
+    function getNetworkIcon(strength: int, type: string): string {
+      if (type === "wlan") {
         if (strength >= 80)
-            return "signal_wifi_4_bar";
+        return "signal_wifi_4_bar";
         if (strength >= 60)
-            return "network_wifi_3_bar";
+        return "network_wifi_3_bar";
         if (strength >= 40)
-            return "network_wifi_2_bar";
+        return "network_wifi_2_bar";
         if (strength >= 20)
-            return "network_wifi_1_bar";
+        return "network_wifi_1_bar";
+
         return "signal_wifi_0_bar";
+      } else if (type === "ether") {
+        return "Lan";
+      }
+      return "signal_wifi_off"
     }
 
     function getBluetoothIcon(icon: string): string {

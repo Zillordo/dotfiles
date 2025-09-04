@@ -25,6 +25,6 @@ Singleton {
         property bool activeTrail: true
         property string label: "  "
         property string occupiedLabel: ""
-        property string activeLabel: ""
+        property string activeLabel: "🐱"
     }
 }

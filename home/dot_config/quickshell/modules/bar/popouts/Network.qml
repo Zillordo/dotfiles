@@ -13,10 +13,6 @@ Column {
     }
 
     StyledText {
-        text: qsTr("Strength: %1/100").arg(Network.active?.strength ?? 0)
-    }
-
-    StyledText {
-        text: qsTr("Frequency: %1 MHz").arg(Network.active?.frequency ?? 0)
+      text: Network.active?.strength ? qsTr("Strength: %1/100").arg(Network.active?.strength ?? 0) : ""
     }
 }

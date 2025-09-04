@@ -14,40 +14,50 @@ Singleton {
 
     Process {
         running: true
-        command: ["nmcli", "m"]
-        stdout: SplitParser {
-            onRead: getNetworks.running = true
+        command: ["nu", "-c", `networkctl status | grep "Online state" | str contains online`]
+        stdout: StdioCollector {
+          onStreamFinished: getNetworks.running = this.text === "true"
         }
     }
 
     Process {
         id: getNetworks
         running: true
-        command: ["sh", "-c", `nmcli -g ACTIVE,SIGNAL,FREQ,SSID d w | jq -cR '[(inputs / ":") | select(.[3] | length >= 4)]'`]
-        stdout: SplitParser {
-            onRead: data => {
-                const networks = JSON.parse(data).map(n => [n[0] === "yes", parseInt(n[1]), parseInt(n[2]), n[3]]);
-                const rNetworks = root.networks;
+        command: ["sh", "-c", `networkctl --json=short`]
+        stdout: StdioCollector {
+            onStreamFinished: {
+                try {
+                    const json = JSON.parse(this.text);
+                    const interfaces = (json.Interfaces ?? []).filter(i => i.Type === "ether" || i.Type === "wlan");
 
-                const destroyed = rNetworks.filter(rn => !networks.find(n => n[2] === rn.frequency && n[3] === rn.ssid));
-                for (const network of destroyed)
-                    rNetworks.splice(rNetworks.indexOf(network), 1).forEach(n => n.destroy());
+                    const networks = interfaces.map(i => ({
+                        active: (i.OnlineState === "online") || (i.OperationalState === "routable"),
+                        strength: 0,
+                        frequency: 0,
+                        ssid: i.Name,
+                        type: i.Type
+                    }));
 
-                for (const network of networks) {
-                    const match = rNetworks.find(n => n.frequency === network[2] && n.ssid === network[3]);
-                    if (match) {
-                        match.active = network[0];
-                        match.strength = network[1];
-                        match.frequency = network[2];
-                        match.ssid = network[3];
-                    } else {
-                        rNetworks.push(apComp.createObject(root, {
-                            active: network[0],
-                            strength: network[1],
-                            frequency: network[2],
-                            ssid: network[3]
-                        }));
+                    const rNetworks = root.networks;
+
+                    const destroyed = rNetworks.filter(rn => !networks.find(n => n.ssid === rn.ssid));
+                    for (const network of destroyed)
+                        rNetworks.splice(rNetworks.indexOf(network), 1).forEach(n => n.destroy());
+
+                    for (const network of networks) {
+                        const match = rNetworks.find(n => n.ssid === network.ssid);
+                        if (match) {
+                            match.active = network.active;
+                            match.strength = network.strength;
+                            match.frequency = network.frequency;
+                            match.ssid = network.ssid;
+                            match.type = network.type;
+                        } else {
+                            rNetworks.push(apComp.createObject(root, network));
+                        }
                     }
+                } catch (e) {
+                    // ignore parse errors
                 }
             }
         }
@@ -58,6 +68,7 @@ Singleton {
         required property int strength
         required property int frequency
         required property bool active
+        required property string type
     }
 
     Component {

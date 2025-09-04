@@ -5,6 +5,7 @@ import "root:/config"
 import Quickshell
 import QtQuick
 import QtQuick.Layouts
+import Quickshell.Widgets
 
 Item {
     id: root
@@ -67,11 +68,12 @@ Item {
                     values: Hyprland.clients.filter(c => c.workspace?.id === root.ws)
                 }
 
-                MaterialIcon {
+                IconImage {
+                    id: appIcon
                     required property Hyprland.Client modelData
-
-                    text: Icons.getAppCategoryIcon(modelData.wmClass, "terminal")
-                    color: Colours.palette.m3onSurfaceVariant
+                    implicitSize: 18
+                    source: Icons.getAppIcon(modelData.wmClass ?? "", "image-missing")
+                    anchors.fill: windows
                 }
             }
         }

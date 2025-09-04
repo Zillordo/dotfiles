@@ -45,6 +45,7 @@ Item {
         }
     }
 
+    // FIXME: remove or change to something else
     Item {
         id: child
 
