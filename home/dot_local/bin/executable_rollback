@@ -1,89 +1,58 @@
-#!/usr/bin/env bash
-set -euo pipefail
+#!/usr/bin/env nu
 
-# Interactive Snapper rollback script with fzf
-# Usage: rollback [config]
-CONFIG="${1:-root}"
+$env.config.table.mode = "none"
 
-echo "Interactive Snapper Rollback - Config: $CONFIG"
+def main [config?: string] {
+  let cfg = if ($config == null) { "root" } else { $config }
+  let full_table = (^snapper --jsonout -c $cfg list | from json | get $cfg)
+  let list_res = ($full_table | select number type date)
+  let snapshots = ($list_res | reverse | table -i false | lines)
+  let preview_cmd = "nu -n -c \"" + "snapper --jsonout -c " + $cfg + " list | from json | get " + $cfg + " | where number == ({2} | into int) | transpose | rename Label Value | table -i false -t compact" + "\""
 
-# Get snapshots with specific columns for better performance
-full_snapper_list=$(sudo snapper -c "$CONFIG" list --columns number,type,date,user,description 2>/dev/null)
+  let sel_res = echo $snapshots | ^fzf --header-lines=1 --prompt 'rollback: ' --preview $preview_cmd --preview-window 'down:35%:wrap' | complete 
+  let selected = ($sel_res.stdout | split words | get 1)
 
-# FZF args inspired by mise-plugins-add.sh
-fzf_args=(
-  --reverse
-  --prompt 'rollback> '
-  --delimiter '│'
-  --with-nth '3,5'
-  --preview "echo '📋 Snapshot Details'; echo '━━━━━━━━━━━━━━━━━━━━━━━━'; snapshot_num=\$(echo '{}' | awk -F '│' '{gsub(/^ *| *\$/, \"\", \$1); print \$1}'); snapshot_type=\$(echo '{}' | awk -F '│' '{gsub(/^ *| *\$/, \"\", \$2); print \$2}'); snapshot_date=\$(echo '{}' | awk -F '│' '{gsub(/^ *| *\$/, \"\", \$3); print \$3}'); snapshot_user=\$(echo '{}' | awk -F '│' '{gsub(/^ *| *\$/, \"\", \$4); print \$4}'); snapshot_desc=\$(echo '{}' | awk -F '│' '{gsub(/^ *| *\$/, \"\", \$5); print \$5}'); echo \"Snapshot: \$snapshot_num\"; echo \"Type: \$snapshot_type\"; echo \"Date: \$snapshot_date\"; echo \"User: \$snapshot_user\"; echo \"Description: \$snapshot_desc\"; echo; echo '🔄 Changed files:'; sudo snapper -c $CONFIG status \$snapshot_num 2>/dev/null | head -15 || echo 'No diff data available'"
-  --preview-window 'down:65%:wrap'
-  --bind 'alt-p:toggle-preview'
-  --bind 'alt-d:preview-half-page-down,alt-u:preview-half-page-up'
-  --bind 'alt-k:preview-up,alt-j:preview-down'
-)
+  # Validate snapshot exists (using cached data) - match first field exactly
+  let match = $full_table | where number == ($selected | into int)
+  let num_matches = $match | length
 
-# Extract snapshots (skip header) - simple format like before
-snapshots=$(echo "$full_snapper_list" | sed '1,3d')
+  if ($num_matches == 0) {
+    print $"❌ Snapshot ($selected) not found."
+    exit 1
+  }
 
-selected=$(echo "$snapshots" | fzf "${fzf_args[@]}")
+  print ""
+  print "🎯 Selected snapshot:"
+  print $match
+  print ""
 
-# Check if user cancelled
-if [[ -z "$selected" ]]; then
-  echo "❌ Rollback cancelled."
-  exit 0
-fi
+  let reply = (input $"⚠️  Are you sure you want to rollback to snapshot ($selected)? This will reboot your system! [y/N]: ") | str downcase | str trim
 
-# Extract snapshot number (first field)
-snapshot_number=$(echo "$selected" | awk '{print $1}')
+  print ""
+  if $reply not-in ["y", "yes"] {
+    print "❌ Rollback cancelled."
+    exit 0
+  }
 
-# Validate snapshot number
-if ! [[ "$snapshot_number" =~ ^[0-9]+$ ]]; then
-  echo "❌ Invalid selection. Please select a valid snapshot."
-  exit 1
-fi
+  print $"🔄 Rolling back to snapshot ($selected)..."
 
-# Validate snapshot exists (using cached data)
-if ! echo "$full_snapper_list" | grep -q "^[[:space:]]*${snapshot_number}[[:space:]]"; then
-  echo "❌ Snapshot $snapshot_number not found."
-  exit 1
-fi
+  # Perform rollback
+  ^sudo snapper -c $cfg rollback $selected
 
-# Get snapshot details for confirmation (using cached data)
-snapshot_info=$(echo "$full_snapper_list" | grep "^[[:space:]]*${snapshot_number}[[:space:]]")
+  if ($env.LAST_EXIT_CODE == 0) {
+    print "✅ Rollback completed successfully!"
+    print "🔄 System will reboot in 5 seconds..."
+    print "   Press Ctrl+C to cancel reboot"
 
-echo
-echo "🎯 Selected snapshot:"
-echo "   Number: $snapshot_number"
-echo "   Details: $snapshot_info"
-echo
+    for i in (5..1) {
+      print $"   Rebooting in ($i)..."
+      sleep 1sec
+    }
 
-# Confirmation prompt
-read -p "⚠️  Are you sure you want to rollback to snapshot $snapshot_number? This will reboot your system! [y/N]: " -r
-echo
-
-if [[ ! $REPLY =~ ^[Yy]$ ]]; then
-  echo "❌ Rollback cancelled."
-  exit 0
-fi
-
-echo "🔄 Rolling back to snapshot $snapshot_number..."
-
-# Perform rollback
-if sudo snapper -c "$CONFIG" rollback "$snapshot_number"; then
-  echo "✅ Rollback completed successfully!"
-  echo "🔄 System will reboot in 5 seconds..."
-  echo "   Press Ctrl+C to cancel reboot"
-
-  # Countdown
-  for i in {5..1}; do
-    echo "   Rebooting in $i..."
-    sleep 1
-  done
-
-  echo "🔄 Rebooting now..."
-  sudo reboot
-else
-  echo "❌ Rollback failed!"
-  exit 1
-fi
+    print "🔄 Rebooting now..."
+    ^sudo reboot
+  } else {
+    print "❌ Rollback failed!"
+    exit 1
+  }
+}

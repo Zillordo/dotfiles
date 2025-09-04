@@ -1,3 +1,2 @@
-cursor-bin
 slack-desktop-wayland
 tmux-plugin-manager

@@ -23,6 +23,7 @@ ddcutil
 docker
 docker-buildx
 docker-compose
+duf
 efibootmgr
 egl-wayland
 evince
