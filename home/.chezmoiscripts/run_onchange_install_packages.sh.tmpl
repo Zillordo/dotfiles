@@ -1,13 +1,7 @@
 #!/bin/bash
 set -e
 
-# Source lists managed in the chezmoi repo (maps to ~/.config/install on apply)
-EXPLICIT_FILE="{{ .chezmoi.sourceDir }}/dot_config/install/packages-explicit.txt"
-AUR_FILE="{{ .chezmoi.sourceDir }}/dot_config/install/packages-aur.txt"
-
-# Trigger this script when the generated last-updated file changes in the repo
-# PACKAGES_SHA256: {{ include "dot_config/install/last-updated.txt" | sha256sum }}
-
+# Check if yay is available
 if ! command -v yay >/dev/null 2>&1; then
   echo "Error: yay not found in PATH. Install yay first."
   exit 1
@@ -20,18 +14,13 @@ fi
 
 declare -a packages
 
-# Helper: read a list file, ignore comments/blank, append to packages
-read_list() {
-  local file="$1"
-  if [ -f "$file" ]; then
-    # shellcheck disable=SC2207
-    mapfile -t tmp < <(awk 'BEGIN{FS="#"} {gsub(/^\s+|\s+$/, ""); if ($1!="") print $1}' "$file")
-    packages+=("${tmp[@]}")
-  fi
-}
-
-read_list "$EXPLICIT_FILE"
-read_list "$AUR_FILE"
+# Collect all packages from chezmoi template
+{{- range .packages.aur }}
+packages+=({{ . | quote }})
+{{- end }}
+{{- range .packages.explicit }}
+packages+=({{ . | quote }})
+{{- end }}
 
 # Deduplicate while preserving order
 if [ ${#packages[@]} -gt 0 ]; then
@@ -98,3 +87,4 @@ else
 fi
 
 echo "Package installation completed."
+

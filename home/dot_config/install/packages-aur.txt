@@ -1,2 +1,0 @@
-slack-desktop-wayland
-tmux-plugin-manager

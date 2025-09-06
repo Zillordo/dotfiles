@@ -1,0 +1,13 @@
+#!/usr/bin/env nu
+
+let user = ($env.SUDO_USER | default $env.USER)
+
+let packagesFilePath = $"/home/($user)/.local/share/chezmoi/home/.chezmoidata/packages.yaml"
+print $packagesFilePath
+
+let explicit = pacman -Qqe | lines
+let aur = pacman -Qqm | lines
+
+let packages = { packages: { aur: $aur explicit: $explicit } } | to yaml
+
+$packages | save --force $packagesFilePath
