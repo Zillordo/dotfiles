@@ -7,14 +7,15 @@ def main [--tldr(-t), query?: string] {
   let preview_cmd = "nu -n -c \"print 'Description: '; man -k . | lines | get ({1} | into int) | split column ' ' -c | values | flatten | skip 3 | str join ' '\""
   let initialQuery = $query | default ""
 
-  let selected_line = $list | ^fzf --prompt "name: " --with-nth "{1} {2}" --preview $preview_cmd --query $initialQuery
+  let selected_line = $list | ^fzf --prompt "name: " --with-nth "{1} {2} {3}" --preview $preview_cmd --query $initialQuery
 
   let selected_name = $selected_line | split column " " -c | get column2 | get 0
+  let selected_version = $selected_line | split column " " -c | get column3 | get 0
 
   if $tldr {
     ^tldr $selected_name
   } else {
-    ^man $selected_name | col -b | nvim +Man! -o
+    ^man $"($selected_name)($selected_version)" | col -b | nvim +Man! -o
   }
 }
 

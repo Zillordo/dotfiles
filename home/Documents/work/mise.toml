@@ -7,4 +7,4 @@ pnpm = "latest"
 "npm:eslint" = "latest"
 
 [tasks]
-opensearch_perm = "sudo chown -R 1000:1000 ./raptor/raptor_filesystem/opensearch-data/"
+opensearch_perm = "mkdir -p ./raptor/raptor_filesystem/opensearch-data/ && sudo chown -R 1000:1000 ./raptor/raptor_filesystem/opensearch-data/"

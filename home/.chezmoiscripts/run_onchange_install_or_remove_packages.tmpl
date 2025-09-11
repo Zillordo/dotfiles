@@ -1,0 +1,70 @@
+#!/usr/bin/env nu
+
+$env.config.table.mode = "none"
+
+
+def comm [
+    --boolean (-b) # Use boolean values instead of icons
+    l1: list
+    l2: list
+    ...rest: list
+]: nothing -> table {
+    let true_value = if $boolean { true } else { "✓" }
+    let false_value = if $boolean { false } else { "❎" }
+
+    [$l1 $l2] ++ $rest
+        | each { wrap value }
+        | enumerate
+        | each {|list|
+            $list.item | insert $"L($list.index + 1)" { $true_value }
+        } | reduce {|it, acc|
+            $acc | join -o $it value
+        } | update cells {
+            if ($in | is-empty) { $false_value } else { $in }
+        }
+}
+
+
+def main [] {
+  let user = $env.USER
+  let packagesFile = { packages: {aur: [{{- range .packages.aur }} {{ . | quote }} {{- end }}] explicit: [{{- range .packages.explicit }} {{ . | quote }} {{- end }}]} }
+  let packages_current = { packages: { aur: (^pacman -Qqm | lines) explicit: (^pacman -Qqe | lines) } }
+
+  # desired and installed sets
+  let desired_aur = ($packagesFile | get packages | get aur)
+  let desired_repo = ($packagesFile | get packages | get explicit)
+  let installed_aur = ($packages_current | get packages | get aur)
+  let installed_explicit = ($packages_current | get packages | get explicit)
+
+  # diffs using comm tables
+  let comm_aur = (comm -b $desired_aur $installed_aur)
+  let comm_repo = (comm -b $desired_repo $installed_explicit)
+
+  let to_install_aur = ($comm_aur | where {|row| ($row.L1 == true) and ($row.L2 == false)} | get value)
+  let to_install_repo = ($comm_repo | where {|row| ($row.L1 == true) and ($row.L2 == false)} | get value)
+  let to_uninstall_aur = ($comm_aur | where {|row| ($row.L1 == false) and ($row.L2 == true)} | get value)
+  let to_uninstall_repo = ($comm_repo | where {|row| ($row.L1 == false) and ($row.L2 == true)} | get value)
+  let to_uninstall_all = ($to_uninstall_repo | append $to_uninstall_aur)
+
+  # minimally protected packages that should not be removed
+  let protected = [ "base" "linux" "linux-lts" "glibc" "pacman" "yay" "nushell" "chezmoi"]
+  let to_uninstall_safe = ($to_uninstall_all | where {|p| not ($p in $protected) })
+
+  if (($to_install_repo | length) > 0) {
+    print $"➕ Instaling explicit packages ($to_install_repo)"
+
+    ^yay -S -N --needed --noconfirm ($to_install_repo | to text)
+  }
+
+  if (($to_install_aur | length) > 0) {
+    print $"➕ Instaling aur packages ($to_install_aur)"
+
+    ^yay -S -a --needed --noconfirm ($to_install_aur | to text)
+  }
+
+  if (($to_uninstall_safe | length) > 0) {
+    print $"➖ Removing packages ($to_uninstall_safe)"
+
+    $to_uninstall_safe | each {|p| ^yay -Rns --noconfirm $p }
+  }
+}

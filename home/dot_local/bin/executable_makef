@@ -1,0 +1,12 @@
+#!/usr/bin/env nu
+
+$env.config.table.mode = "none"
+
+
+def main [] {
+    let selected_line = ^make | lines | skip 5 | drop 1 | fzf --with-nth="{1} {2}" --preview="{4..-2}";
+    let command = $selected_line | split column ' ' -c | get column2 | get 0;
+
+    ^make $command
+}
+

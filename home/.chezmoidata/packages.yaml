@@ -104,6 +104,7 @@ packages:
   - power-profiles-daemon
   - python-poetry-core
   - python-terminaltexteffects
+  - qalculate-qt
   - qt5-wayland
   - qt6-wayland
   - quickshell-git
