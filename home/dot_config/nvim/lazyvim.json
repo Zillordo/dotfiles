@@ -2,13 +2,14 @@
   "extras": [
     "lazyvim.plugins.extras.coding.yanky",
     "lazyvim.plugins.extras.editor.neo-tree",
+    "lazyvim.plugins.extras.formatting.biome",
     "lazyvim.plugins.extras.lang.nushell",
     "lazyvim.plugins.extras.util.dot",
     "lazyvim.plugins.extras.util.octo"
   ],
   "install_version": 8,
   "news": {
-    "NEWS.md": "10960"
+    "NEWS.md": "11866"
   },
   "version": 8
 }

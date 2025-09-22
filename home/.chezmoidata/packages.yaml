@@ -7,6 +7,7 @@ packages:
   - alacritty
   - amd-ucode
   - atuin
+  - aylurs-gtk-shell-git
   - base
   - base-devel
   - bash-completion

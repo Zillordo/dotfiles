@@ -7,6 +7,8 @@ import "components/workspaces"
 import Quickshell
 import QtQuick
 
+
+
 Item {
     id: root
 
@@ -73,6 +75,8 @@ Item {
         anchors.horizontalCenter: parent.horizontalCenter
 
         implicitWidth: Math.max(osIcon.implicitWidth, workspaces.implicitWidth, activeWindow.implicitWidth, tray.implicitWidth, clock.implicitWidth, statusIcons.implicitWidth, power.implicitWidth)
+
+
 
         OsIcon {
             id: osIcon

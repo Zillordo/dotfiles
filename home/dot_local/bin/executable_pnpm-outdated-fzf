@@ -1,0 +1,15 @@
+#!/usr/bin/env nu
+
+$env.config.table.mode = "none"
+
+def main [] {
+  let pnpm_outdated = (pnpm outdated --long --no-table | lines | split list "")
+  let outdated_table = $pnpm_outdated | each { |block| {pkg: ($block | get 0), version: ($block | get 1), description: ($block | get 2)}}
+
+  let selected_lines = $outdated_table | ^fzf --header-lines 1 -m
+  let packages = $selected_lines | lines | each { |line| $line | split column -c " " | get column2} | flatten
+
+  print $"Updating packages: ($packages)"
+
+  ^pnpm up -L ...$packages
+}

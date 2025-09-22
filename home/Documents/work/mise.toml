@@ -1,7 +1,6 @@
 [tools]
 go = "latest"
 node = "latest"
-"core:go" = "latest"
 prettier = "latest"
 pnpm = "latest"
 "npm:eslint" = "latest"

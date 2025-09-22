@@ -45,7 +45,6 @@ Item {
         }
     }
 
-    // FIXME: remove or change to something else
     Item {
         id: child
 
@@ -56,16 +55,6 @@ Item {
         clip: true
         implicitWidth: Math.max(icon.implicitWidth, current.implicitHeight)
         implicitHeight: icon.implicitHeight + current.implicitWidth + current.anchors.topMargin
-
-        MaterialIcon {
-            id: icon
-
-            animate: true
-            text: Icons.getAppCategoryIcon(Hyprland.activeClient?.wmClass, "desktop_windows")
-            color: root.colour
-
-            anchors.horizontalCenter: parent.horizontalCenter
-        }
 
         Title {
             id: text1
