@@ -7,3 +7,4 @@ alias misea = ~/.local/share/chezmoi/scripts/mise-plugins-add.sh
 alias miser = ~/.local/share/chezmoi/scripts/mise-plugins-remove.sh
 
 alias mff = ~/.local/bin/search_man
+alias cc = claude

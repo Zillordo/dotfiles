@@ -1,9 +1,11 @@
 [tools]
-go = "latest"
-node = "latest"
-prettier = "latest"
-pnpm = "latest"
+node = "22.18"
+"npm:@mariozechner/pi-coding-agent" = "latest"
 "npm:eslint" = "latest"
+"npm:nx" = "latest"
+television = "latest"
+uv = "latest"
 
 [tasks]
-opensearch_perm = "mkdir -p ./raptor/raptor_filesystem/opensearch-data/ && sudo chown -R 1000:1000 ./raptor/raptor_filesystem/opensearch-data/"
+dev = "cd ./fidoo-fx-fe && npx nx run bw-react-app:serve"
+storybook = "cd ./fidoo-fx-fe && npx nx run storybook-host:storybook"

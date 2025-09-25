@@ -29,6 +29,10 @@ $env.config.completions.case_sensitive = false
 
 $env.config.table.mode = "light"
 
+$env.MANPAGER = "nvim +Man!"
+$env.PAGER = "bat --paging=always"
+$env.SYSTEMD_PAGER = "bat --paging=always -l log"
+
 
 source ~/.local/share/atuin/init.nu
 source ~/.config/omarchy/current/theme/nushell.theme.nu
@@ -37,6 +41,6 @@ source ~/.zoxide.nu
 source ./starship.nu
 source ./ssh-agent.nu
 source ./setup-plugins.nu
-
-use ($nu.default-config-dir | path join mise.nu)
+source ./television.nu
+source ~/.cache/mise/init.nu
 

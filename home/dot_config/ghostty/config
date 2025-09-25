@@ -68,3 +68,5 @@ keybind = ctrl+b>t=new_tab
 
 gtk-custom-css = ./custom_css.css
 
+# Fix general slowness on hyprland (https://github.com/ghostty-org/ghostty/discussions/3224)
+async-backend = epoll

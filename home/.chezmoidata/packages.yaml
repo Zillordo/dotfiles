@@ -1,8 +1,18 @@
 packages:
   aur:
-  - slack-desktop-wayland
+  - aylurs-gtk-shell-git
+  - bruno
+  - codecrafters-bin
+  - libastal-4-git
+  - libastal-git
+  - libastal-io-git
+  - sesh-bin
+  - sesh-bin-debug
   - tmux-plugin-manager
+  - ttf-material-symbols-variable-git
+  - zen-browser-bin
   explicit:
+  - aether
   - age
   - alacritty
   - amd-ucode
@@ -12,27 +22,46 @@ packages:
   - base-devel
   - bash-completion
   - bat
-  - blueberry
+  - bluetui
+  - bolt
   - brightnessctl
+  - bruno
   - btop
   - btrfs-progs
-  - chaotic-keyring
-  - chaotic-mirrorlist
   - chezmoi
+  - chromium
   - clang
+  - claude-code
+  - codecrafters-bin
   - cups
   - cups-browsed
   - cups-filters
   - cups-pdf
-  - cursor-bin
+  - dbeaver
   - ddcutil
   - docker
   - docker-buildx
   - docker-compose
+  - dotnet-runtime-9.0
   - duf
   - efibootmgr
   - egl-wayland
+  - elephant
+  - elephant-bluetooth
+  - elephant-calc
+  - elephant-clipboard
+  - elephant-desktopapplications
+  - elephant-files
+  - elephant-menus
+  - elephant-providerlist
+  - elephant-runner
+  - elephant-symbols
+  - elephant-todo
+  - elephant-unicode
+  - elephant-websearch
   - evince
+  - exfatprogs
+  - expac
   - eza
   - fastfetch
   - fcitx5
@@ -41,18 +70,22 @@ packages:
   - fd
   - ffmpegthumbnailer
   - fzf
-  - gcc14
   - ghostty
   - git
   - github-cli
+  - gnome-keyring
   - gnome-themes-extra
+  - gpu-screen-recorder
   - grub-btrfs
   - gst-plugin-pipewire
   - gum
   - gvfs-mtp
+  - gvfs-nfs
+  - gvfs-smb
   - hypridle
   - hyprland
-  - hyprland-qtutils
+  - hyprland-guiutils
+  - hyprland-preview-share-picker
   - hyprlock
   - hyprpicker
   - hyprshot
@@ -61,8 +94,10 @@ packages:
   - impala
   - imv
   - inetutils
+  - inxi
   - iwd
   - jq
+  - kernel-modules-hook
   - kvantum-qt5
   - lazydocker
   - lazygit
@@ -82,6 +117,7 @@ packages:
   - mise
   - mpv
   - nautilus
+  - nautilus-python
   - neovim
   - nodejs
   - noto-fonts
@@ -91,7 +127,10 @@ packages:
   - nvidia-open-dkms
   - nvidia-utils
   - obsidian
-  - omarchy-chromium
+  - omarchy-keyring
+  - omarchy-nvim
+  - omarchy-walker
+  - opencode
   - pamixer
   - pipewire
   - pipewire-alsa
@@ -108,10 +147,11 @@ packages:
   - qalculate-qt
   - qt5-wayland
   - qt6-wayland
-  - quickshell-git
   - ripgrep
+  - ruby
   - satty
-  - slack-desktop-wayland
+  - sddm
+  - sesh-bin
   - slurp
   - snap-pac
   - snapper
@@ -121,22 +161,25 @@ packages:
   - swaybg
   - swayosd
   - system-config-printer
+  - television
   - tldr
   - tmux
   - tmux-plugin-manager
+  - tobi-try
   - tree
   - tree-sitter-cli
   - ttf-cascadia-mono-nerd
   - ttf-ia-writer
+  - ttf-jetbrains-mono-nerd
   - ttf-material-symbols-variable-git
   - tzupdate
   - ufw
   - ufw-docker
   - unzip
+  - usage
   - uwsm
-  - walker-bin
+  - walker
   - waybar
-  - wf-recorder
   - wget
   - whois
   - wiremix
@@ -146,6 +189,7 @@ packages:
   - woff2-font-awesome
   - xdg-desktop-portal-gtk
   - xdg-desktop-portal-hyprland
+  - xdg-terminal-exec
   - xmlstarlet
   - yaru-icon-theme
   - yay
