@@ -36,8 +36,9 @@
 #network,
 #bluetooth,
 #pulseaudio,
-#clock,
-#custom-omarchy {
+#custom-omarchy,
+#custom-screenrecording-indicator,
+#custom-update {
   min-width: 12px;
   margin: 0 7.5px;
 }
@@ -54,6 +55,18 @@ tooltip {
   margin-left: 20px;
 }
 
+#taskbar button {
+  padding-left: 8px;
+  padding-right: 6px;
+  padding-top: 4px;
+}
+
+#taskbar button.active {
+  border-top: 3px solid @foreground;
+  padding-top: 1px;
+  border-radius: 3px;
+}
+
 #custom-update {
   font-size: 10px;
 }
@@ -66,14 +79,12 @@ tooltip {
   opacity: 0;
 }
 
-#taskbar button {
-  padding-left: 8px;
-  padding-right: 6px;
-  padding-top: 4px;
+#custom-screenrecording-indicator {
+  min-width: 12px;
+  margin-left: 8.75px;
+  font-size: 10px;
 }
 
-#taskbar button.active {
-  border-top: 3px solid @foreground;
-  padding-top: 1px;
-  border-radius: 3px;
+#custom-screenrecording-indicator.active {
+  color: #a55555;
 }

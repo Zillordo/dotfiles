@@ -1,7 +1,13 @@
 packages:
   aur:
+  - aylurs-gtk-shell-git
+  - libastal-4-git
+  - libastal-git
+  - libastal-io-git
   - slack-desktop-wayland
   - tmux-plugin-manager
+  - ttf-material-symbols-variable-git
+  - zen-browser-bin
   explicit:
   - age
   - alacritty
@@ -16,8 +22,6 @@ packages:
   - brightnessctl
   - btop
   - btrfs-progs
-  - chaotic-keyring
-  - chaotic-mirrorlist
   - chezmoi
   - clang
   - cups
@@ -50,6 +54,7 @@ packages:
   - gst-plugin-pipewire
   - gum
   - gvfs-mtp
+  - gvfs-smb
   - hypridle
   - hyprland
   - hyprland-qtutils
@@ -108,7 +113,6 @@ packages:
   - qalculate-qt
   - qt5-wayland
   - qt6-wayland
-  - quickshell-git
   - ripgrep
   - satty
   - slack-desktop-wayland
@@ -128,6 +132,7 @@ packages:
   - tree-sitter-cli
   - ttf-cascadia-mono-nerd
   - ttf-ia-writer
+  - ttf-jetbrains-mono-nerd
   - ttf-material-symbols-variable-git
   - tzupdate
   - ufw

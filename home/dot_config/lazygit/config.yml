@@ -1,0 +1,6 @@
+services:
+  "work-github": "github:github.com"
+  "personal-github": "github:github.com"
+os:
+  open: "xdg-open {{filename}}"
+  openLink: "xdg-open {{link}}"
