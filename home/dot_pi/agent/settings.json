@@ -1,0 +1,23 @@
+{
+  "lastChangelogVersion": "0.67.1",
+  "defaultProvider": "kilo",
+  "defaultModel": "openrouter/free",
+  "defaultThinkingLevel": "off",
+  "theme": "dark",
+  "hideThinkingBlock": false,
+  "packages": [
+    "git:github.com/apmantza/pi-free",
+    "git:github.com/nicobailon/pi-subagents",
+    "git:github.com/nicobailon/pi-web-access",
+    "git:github.com/nicobailon/pi-powerline-footer"
+  ],
+  "powerline": "default",
+  "powerlineShortcuts": {
+    "stashHistory": "ctrl+shift+h",
+    "cutEditor": "ctrl+shift+x"
+  },
+  "quietStartup": true,
+  "enableInstallTelemetry": false,
+  "treeFilterMode": "all",
+  "doubleEscapeAction": "tree"
+}

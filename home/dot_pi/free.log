@@ -1,0 +1,193 @@
+[2026-04-14T07:30:35.805Z] [WARN] [provider-factory] No API key found — set NVIDIA_API_KEY or add nvidia_api_key to ~/.pi/free.json
+[2026-04-14T07:30:35.987Z] [WARN] [provider-factory] No API key found — set FIREWORKS_API_KEY or add fireworks_api_key to ~/.pi/free.json
+[2026-04-14T07:30:35.996Z] [WARN] [provider-factory] No API key found — set MISTRAL_API_KEY or add mistral_api_key to ~/.pi/free.json
+[2026-04-14T07:30:36.005Z] [WARN] [provider-factory] No API key found — set OLLAMA_API_KEY or add ollama_api_key to ~/.pi/free.json
+[2026-04-14T07:30:36.035Z] [INFO] [qwen-models] Qwen OAuth: using static free tier models
+[2026-04-14T07:30:36.043Z] [WARN] [provider-factory] No API key found — set MODAL_API_KEY or add modal_api_key to ~/.pi/free.json
+[2026-04-14T07:30:36.471Z] [WARN] [openrouter] [openrouter] No API key found — set OPENROUTER_API_KEY or add openrouter_api_key to ~/.pi/free.json. Free key at https://openrouter.ai
+[2026-04-14T07:35:03.146Z] [INFO] [provider-helper] Provider error (auto model hopping disabled) {"provider":"qwen","error":"401 Incorrect API key provided. For details, see: https://help.aliyun.com/zh/model-studio/error-code"}
+[2026-04-14T07:38:57.210Z] [WARN] [provider-factory] No API key found — set NVIDIA_API_KEY or add nvidia_api_key to ~/.pi/free.json
+[2026-04-14T07:38:57.342Z] [WARN] [provider-factory] No API key found — set FIREWORKS_API_KEY or add fireworks_api_key to ~/.pi/free.json
+[2026-04-14T07:38:57.349Z] [WARN] [provider-factory] No API key found — set MISTRAL_API_KEY or add mistral_api_key to ~/.pi/free.json
+[2026-04-14T07:38:57.355Z] [WARN] [provider-factory] No API key found — set OLLAMA_API_KEY or add ollama_api_key to ~/.pi/free.json
+[2026-04-14T07:38:57.364Z] [INFO] [qwen-models] Qwen OAuth: using static free tier models
+[2026-04-14T07:38:57.370Z] [WARN] [provider-factory] No API key found — set MODAL_API_KEY or add modal_api_key to ~/.pi/free.json
+[2026-04-14T07:38:57.797Z] [WARN] [openrouter] [openrouter] No API key found — set OPENROUTER_API_KEY or add openrouter_api_key to ~/.pi/free.json. Free key at https://openrouter.ai
+[2026-04-14T07:47:24.609Z] [WARN] [provider-factory] No API key found — set NVIDIA_API_KEY or add nvidia_api_key to ~/.pi/free.json
+[2026-04-14T07:47:24.793Z] [WARN] [provider-factory] No API key found — set FIREWORKS_API_KEY or add fireworks_api_key to ~/.pi/free.json
+[2026-04-14T07:47:24.800Z] [WARN] [provider-factory] No API key found — set MISTRAL_API_KEY or add mistral_api_key to ~/.pi/free.json
+[2026-04-14T07:47:24.807Z] [WARN] [provider-factory] No API key found — set OLLAMA_API_KEY or add ollama_api_key to ~/.pi/free.json
+[2026-04-14T07:47:24.815Z] [INFO] [qwen-models] Qwen OAuth: using static free tier models
+[2026-04-14T07:47:24.821Z] [WARN] [provider-factory] No API key found — set MODAL_API_KEY or add modal_api_key to ~/.pi/free.json
+[2026-04-14T07:47:25.235Z] [WARN] [openrouter] [openrouter] No API key found — set OPENROUTER_API_KEY or add openrouter_api_key to ~/.pi/free.json. Free key at https://openrouter.ai
+[2026-04-14T07:55:22.238Z] [WARN] [provider-factory] No API key found — set NVIDIA_API_KEY or add nvidia_api_key to ~/.pi/free.json
+[2026-04-14T07:55:22.375Z] [WARN] [provider-factory] No API key found — set FIREWORKS_API_KEY or add fireworks_api_key to ~/.pi/free.json
+[2026-04-14T07:55:22.382Z] [WARN] [provider-factory] No API key found — set MISTRAL_API_KEY or add mistral_api_key to ~/.pi/free.json
+[2026-04-14T07:55:22.390Z] [WARN] [provider-factory] No API key found — set OLLAMA_API_KEY or add ollama_api_key to ~/.pi/free.json
+[2026-04-14T07:55:22.399Z] [INFO] [qwen-models] Qwen OAuth: using static free tier models
+[2026-04-14T07:55:22.406Z] [WARN] [provider-factory] No API key found — set MODAL_API_KEY or add modal_api_key to ~/.pi/free.json
+[2026-04-14T07:55:22.828Z] [WARN] [openrouter] [openrouter] No API key found — set OPENROUTER_API_KEY or add openrouter_api_key to ~/.pi/free.json. Free key at https://openrouter.ai
+[2026-04-14T08:13:24.797Z] [WARN] [provider-factory] No API key found — set NVIDIA_API_KEY or add nvidia_api_key to ~/.pi/free.json
+[2026-04-14T08:13:24.931Z] [WARN] [provider-factory] No API key found — set FIREWORKS_API_KEY or add fireworks_api_key to ~/.pi/free.json
+[2026-04-14T08:13:24.938Z] [WARN] [provider-factory] No API key found — set MISTRAL_API_KEY or add mistral_api_key to ~/.pi/free.json
+[2026-04-14T08:13:24.944Z] [WARN] [provider-factory] No API key found — set OLLAMA_API_KEY or add ollama_api_key to ~/.pi/free.json
+[2026-04-14T08:13:24.953Z] [INFO] [qwen-models] Qwen OAuth: using static free tier models
+[2026-04-14T08:13:24.959Z] [WARN] [provider-factory] No API key found — set MODAL_API_KEY or add modal_api_key to ~/.pi/free.json
+[2026-04-14T08:13:25.379Z] [WARN] [openrouter] [openrouter] No API key found — set OPENROUTER_API_KEY or add openrouter_api_key to ~/.pi/free.json. Free key at https://openrouter.ai
+[2026-04-14T08:48:30.503Z] [WARN] [provider-factory] No API key found — set NVIDIA_API_KEY or add nvidia_api_key to ~/.pi/free.json
+[2026-04-14T08:48:30.630Z] [WARN] [provider-factory] No API key found — set FIREWORKS_API_KEY or add fireworks_api_key to ~/.pi/free.json
+[2026-04-14T08:48:30.639Z] [WARN] [provider-factory] No API key found — set MISTRAL_API_KEY or add mistral_api_key to ~/.pi/free.json
+[2026-04-14T08:48:30.646Z] [WARN] [provider-factory] No API key found — set OLLAMA_API_KEY or add ollama_api_key to ~/.pi/free.json
+[2026-04-14T08:48:30.654Z] [INFO] [qwen-models] Qwen OAuth: using static free tier models
+[2026-04-14T08:48:30.660Z] [WARN] [provider-factory] No API key found — set MODAL_API_KEY or add modal_api_key to ~/.pi/free.json
+[2026-04-14T11:13:21.391Z] [INFO] [provider-helper] Provider error (auto model hopping disabled) {"provider":"qwen","error":"401 Incorrect API key provided. For details, see: https://help.aliyun.com/zh/model-studio/error-code"}
+[2026-04-14T11:24:33.720Z] [WARN] [provider-factory] No API key found — set NVIDIA_API_KEY or add nvidia_api_key to ~/.pi/free.json
+[2026-04-14T11:24:33.844Z] [WARN] [provider-factory] No API key found — set FIREWORKS_API_KEY or add fireworks_api_key to ~/.pi/free.json
+[2026-04-14T11:24:33.851Z] [WARN] [provider-factory] No API key found — set MISTRAL_API_KEY or add mistral_api_key to ~/.pi/free.json
+[2026-04-14T11:24:33.858Z] [WARN] [provider-factory] No API key found — set OLLAMA_API_KEY or add ollama_api_key to ~/.pi/free.json
+[2026-04-14T11:24:33.868Z] [INFO] [qwen-models] Qwen OAuth: using static free tier models
+[2026-04-14T11:24:33.875Z] [WARN] [provider-factory] No API key found — set MODAL_API_KEY or add modal_api_key to ~/.pi/free.json
+[2026-04-14T11:24:34.393Z] [WARN] [openrouter] [openrouter] No API key found — set OPENROUTER_API_KEY or add openrouter_api_key to ~/.pi/free.json. Free key at https://openrouter.ai
+[2026-04-14T11:48:09.827Z] [WARN] [provider-factory] No API key found — set NVIDIA_API_KEY or add nvidia_api_key to ~/.pi/free.json
+[2026-04-14T11:48:09.963Z] [WARN] [provider-factory] No API key found — set FIREWORKS_API_KEY or add fireworks_api_key to ~/.pi/free.json
+[2026-04-14T11:48:09.970Z] [WARN] [provider-factory] No API key found — set MISTRAL_API_KEY or add mistral_api_key to ~/.pi/free.json
+[2026-04-14T11:48:09.976Z] [WARN] [provider-factory] No API key found — set OLLAMA_API_KEY or add ollama_api_key to ~/.pi/free.json
+[2026-04-14T11:48:09.987Z] [INFO] [qwen-models] Qwen OAuth: using static free tier models
+[2026-04-14T11:48:09.994Z] [WARN] [provider-factory] No API key found — set MODAL_API_KEY or add modal_api_key to ~/.pi/free.json
+[2026-04-14T11:48:11.902Z] [WARN] [openrouter] [openrouter] No API key found — set OPENROUTER_API_KEY or add openrouter_api_key to ~/.pi/free.json. Free key at https://openrouter.ai
+[2026-04-14T12:04:10.799Z] [WARN] [provider-factory] No API key found — set NVIDIA_API_KEY or add nvidia_api_key to ~/.pi/free.json
+[2026-04-14T12:04:10.930Z] [WARN] [provider-factory] No API key found — set FIREWORKS_API_KEY or add fireworks_api_key to ~/.pi/free.json
+[2026-04-14T12:04:10.936Z] [WARN] [provider-factory] No API key found — set MISTRAL_API_KEY or add mistral_api_key to ~/.pi/free.json
+[2026-04-14T12:04:10.944Z] [WARN] [provider-factory] No API key found — set OLLAMA_API_KEY or add ollama_api_key to ~/.pi/free.json
+[2026-04-14T12:04:10.952Z] [INFO] [qwen-models] Qwen OAuth: using static free tier models
+[2026-04-14T12:04:10.958Z] [WARN] [provider-factory] No API key found — set MODAL_API_KEY or add modal_api_key to ~/.pi/free.json
+[2026-04-14T12:04:12.938Z] [WARN] [openrouter] [openrouter] No API key found — set OPENROUTER_API_KEY or add openrouter_api_key to ~/.pi/free.json. Free key at https://openrouter.ai
+[2026-04-14T12:04:54.236Z] [WARN] [provider-factory] No API key found — set NVIDIA_API_KEY or add nvidia_api_key to ~/.pi/free.json
+[2026-04-14T12:04:54.351Z] [WARN] [provider-factory] No API key found — set FIREWORKS_API_KEY or add fireworks_api_key to ~/.pi/free.json
+[2026-04-14T12:04:54.357Z] [WARN] [provider-factory] No API key found — set MISTRAL_API_KEY or add mistral_api_key to ~/.pi/free.json
+[2026-04-14T12:04:54.364Z] [WARN] [provider-factory] No API key found — set OLLAMA_API_KEY or add ollama_api_key to ~/.pi/free.json
+[2026-04-14T12:04:54.372Z] [INFO] [qwen-models] Qwen OAuth: using static free tier models
+[2026-04-14T12:04:54.378Z] [WARN] [provider-factory] No API key found — set MODAL_API_KEY or add modal_api_key to ~/.pi/free.json
+[2026-04-14T12:04:55.500Z] [WARN] [openrouter] [openrouter] No API key found — set OPENROUTER_API_KEY or add openrouter_api_key to ~/.pi/free.json. Free key at https://openrouter.ai
+[2026-04-14T12:13:43.252Z] [WARN] [provider-factory] No API key found — set NVIDIA_API_KEY or add nvidia_api_key to ~/.pi/free.json
+[2026-04-14T12:13:43.377Z] [WARN] [provider-factory] No API key found — set FIREWORKS_API_KEY or add fireworks_api_key to ~/.pi/free.json
+[2026-04-14T12:13:43.384Z] [WARN] [provider-factory] No API key found — set MISTRAL_API_KEY or add mistral_api_key to ~/.pi/free.json
+[2026-04-14T12:13:43.387Z] [WARN] [provider-factory] No API key found — set OLLAMA_API_KEY or add ollama_api_key to ~/.pi/free.json
+[2026-04-14T12:13:43.392Z] [INFO] [qwen-models] Qwen OAuth: using static free tier models
+[2026-04-14T12:13:43.395Z] [WARN] [provider-factory] No API key found — set MODAL_API_KEY or add modal_api_key to ~/.pi/free.json
+[2026-04-14T12:13:44.544Z] [WARN] [openrouter] [openrouter] No API key found — set OPENROUTER_API_KEY or add openrouter_api_key to ~/.pi/free.json. Free key at https://openrouter.ai
+[2026-04-14T12:13:49.793Z] [INFO] [provider-helper] Provider error (auto model hopping disabled) {"provider":"kilo","error":"403 \"arcee-ai/trinity-large-thinking:free is only available for kiloclaw, openclaw. Use kilo-auto/fr"}
+[2026-04-14T12:26:01.624Z] [WARN] [provider-factory] No API key found — set NVIDIA_API_KEY or add nvidia_api_key to ~/.pi/free.json
+[2026-04-14T12:26:01.747Z] [WARN] [provider-factory] No API key found — set FIREWORKS_API_KEY or add fireworks_api_key to ~/.pi/free.json
+[2026-04-14T12:26:01.753Z] [WARN] [provider-factory] No API key found — set MISTRAL_API_KEY or add mistral_api_key to ~/.pi/free.json
+[2026-04-14T12:26:01.760Z] [WARN] [provider-factory] No API key found — set OLLAMA_API_KEY or add ollama_api_key to ~/.pi/free.json
+[2026-04-14T12:26:01.768Z] [INFO] [qwen-models] Qwen OAuth: using static free tier models
+[2026-04-14T12:26:01.774Z] [WARN] [provider-factory] No API key found — set MODAL_API_KEY or add modal_api_key to ~/.pi/free.json
+[2026-04-14T12:26:02.860Z] [WARN] [openrouter] [openrouter] No API key found — set OPENROUTER_API_KEY or add openrouter_api_key to ~/.pi/free.json. Free key at https://openrouter.ai
+[2026-04-14T12:27:42.475Z] [WARN] [provider-factory] No API key found — set NVIDIA_API_KEY or add nvidia_api_key to ~/.pi/free.json
+[2026-04-14T12:27:42.601Z] [WARN] [provider-factory] No API key found — set FIREWORKS_API_KEY or add fireworks_api_key to ~/.pi/free.json
+[2026-04-14T12:27:42.608Z] [WARN] [provider-factory] No API key found — set MISTRAL_API_KEY or add mistral_api_key to ~/.pi/free.json
+[2026-04-14T12:27:42.614Z] [WARN] [provider-factory] No API key found — set OLLAMA_API_KEY or add ollama_api_key to ~/.pi/free.json
+[2026-04-14T12:27:42.622Z] [INFO] [qwen-models] Qwen OAuth: using static free tier models
+[2026-04-14T12:27:42.628Z] [WARN] [provider-factory] No API key found — set MODAL_API_KEY or add modal_api_key to ~/.pi/free.json
+[2026-04-14T12:27:43.662Z] [WARN] [openrouter] [openrouter] No API key found — set OPENROUTER_API_KEY or add openrouter_api_key to ~/.pi/free.json. Free key at https://openrouter.ai
+[2026-04-14T12:31:13.304Z] [WARN] [provider-factory] No API key found — set NVIDIA_API_KEY or add nvidia_api_key to ~/.pi/free.json
+[2026-04-14T12:31:13.424Z] [WARN] [provider-factory] No API key found — set FIREWORKS_API_KEY or add fireworks_api_key to ~/.pi/free.json
+[2026-04-14T12:31:13.428Z] [WARN] [provider-factory] No API key found — set MISTRAL_API_KEY or add mistral_api_key to ~/.pi/free.json
+[2026-04-14T12:31:13.432Z] [WARN] [provider-factory] No API key found — set OLLAMA_API_KEY or add ollama_api_key to ~/.pi/free.json
+[2026-04-14T12:31:13.437Z] [INFO] [qwen-models] Qwen OAuth: using static free tier models
+[2026-04-14T12:31:13.441Z] [WARN] [provider-factory] No API key found — set MODAL_API_KEY or add modal_api_key to ~/.pi/free.json
+[2026-04-14T12:31:14.612Z] [WARN] [openrouter] [openrouter] No API key found — set OPENROUTER_API_KEY or add openrouter_api_key to ~/.pi/free.json. Free key at https://openrouter.ai
+[2026-04-14T12:35:42.275Z] [WARN] [provider-factory] No API key found — set NVIDIA_API_KEY or add nvidia_api_key to ~/.pi/free.json
+[2026-04-14T12:35:42.432Z] [WARN] [provider-factory] No API key found — set FIREWORKS_API_KEY or add fireworks_api_key to ~/.pi/free.json
+[2026-04-14T12:35:42.435Z] [WARN] [provider-factory] No API key found — set MISTRAL_API_KEY or add mistral_api_key to ~/.pi/free.json
+[2026-04-14T12:35:42.439Z] [WARN] [provider-factory] No API key found — set OLLAMA_API_KEY or add ollama_api_key to ~/.pi/free.json
+[2026-04-14T12:35:42.444Z] [INFO] [qwen-models] Qwen OAuth: using static free tier models
+[2026-04-14T12:35:42.447Z] [WARN] [provider-factory] No API key found — set MODAL_API_KEY or add modal_api_key to ~/.pi/free.json
+[2026-04-14T12:35:43.573Z] [WARN] [openrouter] [openrouter] No API key found — set OPENROUTER_API_KEY or add openrouter_api_key to ~/.pi/free.json. Free key at https://openrouter.ai
+[2026-04-14T12:42:47.428Z] [WARN] [provider-factory] No API key found — set NVIDIA_API_KEY or add nvidia_api_key to ~/.pi/free.json
+[2026-04-14T12:42:47.560Z] [WARN] [provider-factory] No API key found — set FIREWORKS_API_KEY or add fireworks_api_key to ~/.pi/free.json
+[2026-04-14T12:42:47.567Z] [WARN] [provider-factory] No API key found — set MISTRAL_API_KEY or add mistral_api_key to ~/.pi/free.json
+[2026-04-14T12:42:47.574Z] [WARN] [provider-factory] No API key found — set OLLAMA_API_KEY or add ollama_api_key to ~/.pi/free.json
+[2026-04-14T12:42:47.582Z] [INFO] [qwen-models] Qwen OAuth: using static free tier models
+[2026-04-14T12:42:47.588Z] [WARN] [provider-factory] No API key found — set MODAL_API_KEY or add modal_api_key to ~/.pi/free.json
+[2026-04-14T12:42:48.643Z] [WARN] [openrouter] [openrouter] No API key found — set OPENROUTER_API_KEY or add openrouter_api_key to ~/.pi/free.json. Free key at https://openrouter.ai
+[2026-04-14T12:43:31.897Z] [WARN] [provider-factory] No API key found — set NVIDIA_API_KEY or add nvidia_api_key to ~/.pi/free.json
+[2026-04-14T12:43:32.075Z] [WARN] [provider-factory] No API key found — set FIREWORKS_API_KEY or add fireworks_api_key to ~/.pi/free.json
+[2026-04-14T12:43:32.082Z] [WARN] [provider-factory] No API key found — set MISTRAL_API_KEY or add mistral_api_key to ~/.pi/free.json
+[2026-04-14T12:43:32.089Z] [WARN] [provider-factory] No API key found — set OLLAMA_API_KEY or add ollama_api_key to ~/.pi/free.json
+[2026-04-14T12:43:32.098Z] [INFO] [qwen-models] Qwen OAuth: using static free tier models
+[2026-04-14T12:43:32.106Z] [WARN] [provider-factory] No API key found — set MODAL_API_KEY or add modal_api_key to ~/.pi/free.json
+[2026-04-14T12:43:33.060Z] [WARN] [openrouter] [openrouter] No API key found — set OPENROUTER_API_KEY or add openrouter_api_key to ~/.pi/free.json. Free key at https://openrouter.ai
+[2026-04-14T12:43:48.010Z] [WARN] [provider-factory] No API key found — set NVIDIA_API_KEY or add nvidia_api_key to ~/.pi/free.json
+[2026-04-14T12:43:48.142Z] [WARN] [provider-factory] No API key found — set FIREWORKS_API_KEY or add fireworks_api_key to ~/.pi/free.json
+[2026-04-14T12:43:48.148Z] [WARN] [provider-factory] No API key found — set MISTRAL_API_KEY or add mistral_api_key to ~/.pi/free.json
+[2026-04-14T12:43:48.154Z] [WARN] [provider-factory] No API key found — set OLLAMA_API_KEY or add ollama_api_key to ~/.pi/free.json
+[2026-04-14T12:43:48.161Z] [INFO] [qwen-models] Qwen OAuth: using static free tier models
+[2026-04-14T12:43:48.167Z] [WARN] [provider-factory] No API key found — set MODAL_API_KEY or add modal_api_key to ~/.pi/free.json
+[2026-04-14T12:43:49.043Z] [WARN] [openrouter] [openrouter] No API key found — set OPENROUTER_API_KEY or add openrouter_api_key to ~/.pi/free.json. Free key at https://openrouter.ai
+[2026-04-14T12:48:39.714Z] [WARN] [provider-factory] No API key found — set NVIDIA_API_KEY or add nvidia_api_key to ~/.pi/free.json
+[2026-04-14T12:48:39.858Z] [WARN] [provider-factory] No API key found — set FIREWORKS_API_KEY or add fireworks_api_key to ~/.pi/free.json
+[2026-04-14T12:48:39.864Z] [WARN] [provider-factory] No API key found — set MISTRAL_API_KEY or add mistral_api_key to ~/.pi/free.json
+[2026-04-14T12:48:39.870Z] [WARN] [provider-factory] No API key found — set OLLAMA_API_KEY or add ollama_api_key to ~/.pi/free.json
+[2026-04-14T12:48:39.877Z] [INFO] [qwen-models] Qwen OAuth: using static free tier models
+[2026-04-14T12:48:39.883Z] [WARN] [provider-factory] No API key found — set MODAL_API_KEY or add modal_api_key to ~/.pi/free.json
+[2026-04-14T12:48:40.782Z] [WARN] [openrouter] [openrouter] No API key found — set OPENROUTER_API_KEY or add openrouter_api_key to ~/.pi/free.json. Free key at https://openrouter.ai
+[2026-04-14T12:49:21.765Z] [WARN] [provider-factory] No API key found — set NVIDIA_API_KEY or add nvidia_api_key to ~/.pi/free.json
+[2026-04-14T12:49:21.908Z] [WARN] [provider-factory] No API key found — set FIREWORKS_API_KEY or add fireworks_api_key to ~/.pi/free.json
+[2026-04-14T12:49:21.914Z] [WARN] [provider-factory] No API key found — set MISTRAL_API_KEY or add mistral_api_key to ~/.pi/free.json
+[2026-04-14T12:49:21.922Z] [WARN] [provider-factory] No API key found — set OLLAMA_API_KEY or add ollama_api_key to ~/.pi/free.json
+[2026-04-14T12:49:21.929Z] [INFO] [qwen-models] Qwen OAuth: using static free tier models
+[2026-04-14T12:49:21.935Z] [WARN] [provider-factory] No API key found — set MODAL_API_KEY or add modal_api_key to ~/.pi/free.json
+[2026-04-14T12:49:22.862Z] [WARN] [openrouter] [openrouter] No API key found — set OPENROUTER_API_KEY or add openrouter_api_key to ~/.pi/free.json. Free key at https://openrouter.ai
+[2026-04-14T12:50:43.638Z] [WARN] [provider-factory] No API key found — set NVIDIA_API_KEY or add nvidia_api_key to ~/.pi/free.json
+[2026-04-14T12:50:43.779Z] [WARN] [provider-factory] No API key found — set FIREWORKS_API_KEY or add fireworks_api_key to ~/.pi/free.json
+[2026-04-14T12:50:43.784Z] [WARN] [provider-factory] No API key found — set MISTRAL_API_KEY or add mistral_api_key to ~/.pi/free.json
+[2026-04-14T12:50:43.788Z] [WARN] [provider-factory] No API key found — set OLLAMA_API_KEY or add ollama_api_key to ~/.pi/free.json
+[2026-04-14T12:50:43.792Z] [INFO] [qwen-models] Qwen OAuth: using static free tier models
+[2026-04-14T12:50:43.795Z] [WARN] [provider-factory] No API key found — set MODAL_API_KEY or add modal_api_key to ~/.pi/free.json
+[2026-04-14T12:50:44.670Z] [WARN] [openrouter] [openrouter] No API key found — set OPENROUTER_API_KEY or add openrouter_api_key to ~/.pi/free.json. Free key at https://openrouter.ai
+[2026-04-14T12:51:10.566Z] [WARN] [provider-factory] No API key found — set NVIDIA_API_KEY or add nvidia_api_key to ~/.pi/free.json
+[2026-04-14T12:51:10.689Z] [WARN] [provider-factory] No API key found — set FIREWORKS_API_KEY or add fireworks_api_key to ~/.pi/free.json
+[2026-04-14T12:51:10.696Z] [WARN] [provider-factory] No API key found — set MISTRAL_API_KEY or add mistral_api_key to ~/.pi/free.json
+[2026-04-14T12:51:10.702Z] [WARN] [provider-factory] No API key found — set OLLAMA_API_KEY or add ollama_api_key to ~/.pi/free.json
+[2026-04-14T12:51:10.710Z] [INFO] [qwen-models] Qwen OAuth: using static free tier models
+[2026-04-14T12:51:10.716Z] [WARN] [provider-factory] No API key found — set MODAL_API_KEY or add modal_api_key to ~/.pi/free.json
+[2026-04-14T12:51:11.645Z] [WARN] [openrouter] [openrouter] No API key found — set OPENROUTER_API_KEY or add openrouter_api_key to ~/.pi/free.json. Free key at https://openrouter.ai
+[2026-04-14T12:51:32.218Z] [WARN] [provider-factory] No API key found — set NVIDIA_API_KEY or add nvidia_api_key to ~/.pi/free.json
+[2026-04-14T12:51:32.356Z] [WARN] [provider-factory] No API key found — set FIREWORKS_API_KEY or add fireworks_api_key to ~/.pi/free.json
+[2026-04-14T12:51:32.363Z] [WARN] [provider-factory] No API key found — set MISTRAL_API_KEY or add mistral_api_key to ~/.pi/free.json
+[2026-04-14T12:51:32.370Z] [WARN] [provider-factory] No API key found — set OLLAMA_API_KEY or add ollama_api_key to ~/.pi/free.json
+[2026-04-14T12:51:32.378Z] [INFO] [qwen-models] Qwen OAuth: using static free tier models
+[2026-04-14T12:51:32.384Z] [WARN] [provider-factory] No API key found — set MODAL_API_KEY or add modal_api_key to ~/.pi/free.json
+[2026-04-14T12:51:33.526Z] [WARN] [openrouter] [openrouter] No API key found — set OPENROUTER_API_KEY or add openrouter_api_key to ~/.pi/free.json. Free key at https://openrouter.ai
+[2026-04-14T12:51:59.911Z] [WARN] [provider-factory] No API key found — set NVIDIA_API_KEY or add nvidia_api_key to ~/.pi/free.json
+[2026-04-14T12:52:00.084Z] [WARN] [provider-factory] No API key found — set FIREWORKS_API_KEY or add fireworks_api_key to ~/.pi/free.json
+[2026-04-14T12:52:00.091Z] [WARN] [provider-factory] No API key found — set MISTRAL_API_KEY or add mistral_api_key to ~/.pi/free.json
+[2026-04-14T12:52:00.098Z] [WARN] [provider-factory] No API key found — set OLLAMA_API_KEY or add ollama_api_key to ~/.pi/free.json
+[2026-04-14T12:52:00.106Z] [INFO] [qwen-models] Qwen OAuth: using static free tier models
+[2026-04-14T12:52:00.113Z] [WARN] [provider-factory] No API key found — set MODAL_API_KEY or add modal_api_key to ~/.pi/free.json
+[2026-04-14T12:52:01.275Z] [WARN] [openrouter] [openrouter] No API key found — set OPENROUTER_API_KEY or add openrouter_api_key to ~/.pi/free.json. Free key at https://openrouter.ai
+[2026-04-14T12:54:23.991Z] [WARN] [provider-factory] No API key found — set NVIDIA_API_KEY or add nvidia_api_key to ~/.pi/free.json
+[2026-04-14T12:54:24.115Z] [WARN] [provider-factory] No API key found — set FIREWORKS_API_KEY or add fireworks_api_key to ~/.pi/free.json
+[2026-04-14T12:54:24.119Z] [WARN] [provider-factory] No API key found — set MISTRAL_API_KEY or add mistral_api_key to ~/.pi/free.json
+[2026-04-14T12:54:24.122Z] [WARN] [provider-factory] No API key found — set OLLAMA_API_KEY or add ollama_api_key to ~/.pi/free.json
+[2026-04-14T12:54:24.127Z] [INFO] [qwen-models] Qwen OAuth: using static free tier models
+[2026-04-14T12:54:24.130Z] [WARN] [provider-factory] No API key found — set MODAL_API_KEY or add modal_api_key to ~/.pi/free.json
+[2026-04-14T12:54:25.168Z] [WARN] [openrouter] [openrouter] No API key found — set OPENROUTER_API_KEY or add openrouter_api_key to ~/.pi/free.json. Free key at https://openrouter.ai
+[2026-04-14T13:16:00.845Z] [WARN] [provider-factory] No API key found — set NVIDIA_API_KEY or add nvidia_api_key to ~/.pi/free.json
+[2026-04-14T13:16:00.981Z] [WARN] [provider-factory] No API key found — set FIREWORKS_API_KEY or add fireworks_api_key to ~/.pi/free.json
+[2026-04-14T13:16:00.987Z] [WARN] [provider-factory] No API key found — set MISTRAL_API_KEY or add mistral_api_key to ~/.pi/free.json
+[2026-04-14T13:16:00.994Z] [WARN] [provider-factory] No API key found — set OLLAMA_API_KEY or add ollama_api_key to ~/.pi/free.json
+[2026-04-14T13:16:01.003Z] [INFO] [qwen-models] Qwen OAuth: using static free tier models
+[2026-04-14T13:16:01.009Z] [WARN] [provider-factory] No API key found — set MODAL_API_KEY or add modal_api_key to ~/.pi/free.json
+[2026-04-14T13:16:02.089Z] [WARN] [openrouter] [openrouter] No API key found — set OPENROUTER_API_KEY or add openrouter_api_key to ~/.pi/free.json. Free key at https://openrouter.ai
+[2026-04-14T13:23:22.290Z] [WARN] [provider-factory] No API key found — set NVIDIA_API_KEY or add nvidia_api_key to ~/.pi/free.json
+[2026-04-14T13:23:22.436Z] [WARN] [provider-factory] No API key found — set FIREWORKS_API_KEY or add fireworks_api_key to ~/.pi/free.json
+[2026-04-14T13:23:22.443Z] [WARN] [provider-factory] No API key found — set MISTRAL_API_KEY or add mistral_api_key to ~/.pi/free.json
+[2026-04-14T13:23:22.449Z] [WARN] [provider-factory] No API key found — set OLLAMA_API_KEY or add ollama_api_key to ~/.pi/free.json
+[2026-04-14T13:23:22.458Z] [INFO] [qwen-models] Qwen OAuth: using static free tier models
+[2026-04-14T13:23:22.464Z] [WARN] [provider-factory] No API key found — set MODAL_API_KEY or add modal_api_key to ~/.pi/free.json
+[2026-04-14T13:23:23.603Z] [WARN] [openrouter] [openrouter] No API key found — set OPENROUTER_API_KEY or add openrouter_api_key to ~/.pi/free.json. Free key at https://openrouter.ai
+[2026-04-14T13:23:54.394Z] [INFO] [provider-helper] Provider error (auto model hopping disabled) {"provider":"kilo","error":"Operation aborted"}
+[2026-04-14T13:26:09.409Z] [INFO] [provider-helper] Provider error (auto model hopping disabled) {"provider":"kilo","error":"Operation aborted"}

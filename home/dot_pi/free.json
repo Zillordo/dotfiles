@@ -1,0 +1,21 @@
+{
+  "openrouter_api_key": "",
+  "nvidia_api_key": "",
+  "opencode_api_key": "",
+  "opencode_go_api_key": "",
+  "fireworks_api_key": "",
+  "mistral_api_key": "",
+  "ollama_api_key": "",
+  "modal_api_key": "",
+  "kilo_free_only": false,
+  "hidden_models": [],
+  "kilo_show_paid": false,
+  "openrouter_show_paid": false,
+  "nvidia_show_paid": false,
+  "fireworks_show_paid": false,
+  "cline_show_paid": false,
+  "zen_show_paid": false,
+  "go_show_paid": false,
+  "mistral_show_paid": false,
+  "ollama_show_paid": false
+}

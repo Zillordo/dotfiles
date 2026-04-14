@@ -1,0 +1,8 @@
+# pack-refs with: peeled fully-peeled sorted 
+da73ee105608f01db3eef1c6ff2ed7569902229e refs/remotes/origin/fix/qwen-dashscope-compat
+8569608a70506a403389f74d96b9d3ca1745904c refs/remotes/origin/fix/qwen-oauth-flow
+41024939608b5906ee59c286ead44f1925ce1449 refs/remotes/origin/fix/qwen-oauth-url
+93a5bc0e8d304edc85e1197d5ecdecf57c57e527 refs/remotes/origin/fix/qwen-portal-endpoint
+aaa46d11df527de6235afbc2363821cae1e72084 refs/remotes/origin/master
+cffeef6f2d6ccaa861281ebbbeed03ee6569ab64 refs/remotes/origin/simplify-go-provider
+03f964cb605edb9e50c08f631911a0252d8b7c7b refs/remotes/origin/update-benchmarks-8
