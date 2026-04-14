@@ -1,0 +1,34 @@
+[metadata]
+name = "mise-tools"
+description = "Browse and manage mise tools and plugins"
+requirements = ["mise"]
+
+[source]
+command = [
+  "mise list",
+  "mise registry | lines | each { |line| let parts = ($line | split row -r '\\s+' | filter { |x| $x != '' }); $\"($parts.1) ($parts.0)\" } | str join \"\\n\"",
+]
+display = "{split: :0}"
+
+[preview]
+command = "mise ls '{split: :0}' 2>/dev/null"
+
+[keybindings]
+enter = "actions:use"
+f2 = "actions:unuse"
+f3 = "actions:uninstall"
+
+[actions.use]
+description = "mise use selected tool"
+command = "mise use '{split: :0}'"
+mode = "execute"
+
+[actions.unuse]
+description = "mise unuse selected tool"
+command = "mise unuse '{split: :0}'"
+mode = "execute"
+
+[actions.uninstall]
+description = "mise uninstall selected tool"
+command = "mise uninstall '{split: :0}'"
+mode = "execute"

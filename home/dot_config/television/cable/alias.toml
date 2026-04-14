@@ -1,0 +1,13 @@
+[metadata]
+name = "alias"
+description = "A channel to select from shell aliases"
+
+[source]
+command = "scope aliases | get name"
+output = "{split:=:0}"
+
+[preview]
+command = "scope aliases | where name == {}"
+
+[ui.preview_panel]
+size = 30

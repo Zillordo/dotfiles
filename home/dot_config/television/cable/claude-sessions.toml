@@ -1,0 +1,21 @@
+[metadata]
+name = "claude-sessions"
+description = "Resume a past Claude Code session"
+requirements = ["jq"]
+
+[source]
+command = "bash ~/.claude/hooks/list-sessions.sh"
+output = "{split: :0}"
+no_sort = true
+frecency = false
+
+[preview]
+command = "bash ~/.claude/hooks/preview-session.sh '{0}'"
+
+[keybindings]
+enter = "actions:resume"
+
+[actions.resume]
+description = "Resume the selected Claude session"
+command = "claude --resume '{0}'"
+mode = "execute"
