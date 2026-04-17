@@ -1,0 +1,38 @@
+{
+  "runId": "87d6c7c4",
+  "agent": "scout",
+  "task": "what is the version of my nushell\n\n---\n**Output:** Write your findings to: /home/allank/.local/share/chezmoi/context.md",
+  "exitCode": 1,
+  "usage": {
+    "input": 0,
+    "output": 0,
+    "cacheRead": 0,
+    "cacheWrite": 0,
+    "cost": 0,
+    "turns": 0
+  },
+  "model": "anthropic/claude-haiku-4-5",
+  "attemptedModels": [
+    "anthropic/claude-haiku-4-5"
+  ],
+  "modelAttempts": [
+    {
+      "model": "anthropic/claude-haiku-4-5",
+      "success": false,
+      "exitCode": 1,
+      "error": "No API key found for anthropic.\n\nUse /login or set an API key environment variable. See /opt/pi-coding-agent/docs/providers.md",
+      "usage": {
+        "input": 0,
+        "output": 0,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "cost": 0,
+        "turns": 0
+      }
+    }
+  ],
+  "durationMs": 1396,
+  "toolCount": 0,
+  "error": "No API key found for anthropic.\n\nUse /login or set an API key environment variable. See /opt/pi-coding-agent/docs/providers.md",
+  "timestamp": 1776244902391
+}

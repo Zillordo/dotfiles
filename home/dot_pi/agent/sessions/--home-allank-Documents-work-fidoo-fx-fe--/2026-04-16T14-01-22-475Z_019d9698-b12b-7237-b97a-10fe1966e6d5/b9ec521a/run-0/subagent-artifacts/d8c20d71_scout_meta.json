@@ -1,0 +1,36 @@
+{
+  "runId": "d8c20d71",
+  "agent": "scout",
+  "task": "Analyze the current cashflow table component APIs in this codebase. Identify the four primary call sites (income categories, costs categories, net balance row, final balance row), their prop shapes, and any duplicated naming. Propose the most common-case interface that preserves rendering and keeps call sites concise. Return concrete file paths and component names if possible.\n\n---\n**Output:** Write your findings to: /home/allank/Documents/work/fidoo-fx-fe/context.md",
+  "exitCode": 0,
+  "usage": {
+    "input": 43458,
+    "output": 2376,
+    "cacheRead": 67200,
+    "cacheWrite": 0,
+    "cost": 0.1210755,
+    "turns": 7
+  },
+  "model": "openai-codex/gpt-5.3-codex",
+  "attemptedModels": [
+    "openai-codex/gpt-5.3-codex"
+  ],
+  "modelAttempts": [
+    {
+      "model": "openai-codex/gpt-5.3-codex",
+      "success": true,
+      "exitCode": 0,
+      "usage": {
+        "input": 43458,
+        "output": 2376,
+        "cacheRead": 67200,
+        "cacheWrite": 0,
+        "cost": 0.1210755,
+        "turns": 7
+      }
+    }
+  ],
+  "durationMs": 58570,
+  "toolCount": 11,
+  "timestamp": 1776348544046
+}

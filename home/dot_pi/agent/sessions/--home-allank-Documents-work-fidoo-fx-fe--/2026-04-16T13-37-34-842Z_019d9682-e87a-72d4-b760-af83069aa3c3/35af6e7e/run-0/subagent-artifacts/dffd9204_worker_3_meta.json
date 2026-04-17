@@ -1,0 +1,36 @@
+{
+  "runId": "dffd9204",
+  "agent": "worker",
+  "task": "Design an interface for refactoring the duplication between MonthPicker.tsx and WeekPicker.tsx in bw-react-cockpit cashflowFilterControls.\n\nRequirements:\n- Both consume selectedDay/maxDateRangeFrom/maxDateRangeTo from time period controls, track local value and view state, and render StaticCalendar with range props.\n- Differences are views/openTo, calendar sizing, change callback semantics (month when view===month vs week when view===day), and WeekPicker custom day slot behavior.\n- Recommend an interface to share common controlled-calendar logic while allowing mode-specific configuration and optional custom day renderer.\n\nConstraint for this design: Take inspiration from a headless hook + thin view paradigm.\n\nOutput format:\n1. Interface signature\n2. Usage example\n3. What this design hides internally\n4. Trade-offs of this approach",
+  "exitCode": 0,
+  "usage": {
+    "input": 1008,
+    "output": 1576,
+    "cacheRead": 12288,
+    "cacheWrite": 0,
+    "cost": 0.0087696,
+    "turns": 3
+  },
+  "model": "openai-codex/gpt-5.4-mini",
+  "attemptedModels": [
+    "openai-codex/gpt-5.4-mini"
+  ],
+  "modelAttempts": [
+    {
+      "model": "openai-codex/gpt-5.4-mini",
+      "success": true,
+      "exitCode": 0,
+      "usage": {
+        "input": 1008,
+        "output": 1576,
+        "cacheRead": 12288,
+        "cacheWrite": 0,
+        "cost": 0.0087696,
+        "turns": 3
+      }
+    }
+  ],
+  "durationMs": 14538,
+  "toolCount": 1,
+  "timestamp": 1776346894784
+}

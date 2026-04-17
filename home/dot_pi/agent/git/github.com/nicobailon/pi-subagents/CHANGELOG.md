@@ -2,6 +2,14 @@
 
 ## [Unreleased]
 
+## [0.14.1] - 2026-04-14
+
+### Fixed
+- Completed foreground subagent results now return compact payloads instead of inlining full raw message histories and per-result progress objects, preventing long tool-heavy sync runs from overwhelming the parent agent return path.
+- Prompt-template delegation now rebuilds minimal assistant messages from compact foreground results when raw message arrays are intentionally omitted.
+- UI/status wording now uses plain text labels instead of glyph-heavy markers across foreground rendering, parallel summaries, save-result receipts, installer output, agent manager views, clarify screens, and the corresponding README/CHANGELOG examples.
+- Added a realistic foreground integration repro for issue `#80` and cleaned up the touched tests to remove the remaining blunt `as any` fixture casts.
+
 ## [0.14.0] - 2026-04-14
 
 ### Added
@@ -496,7 +504,7 @@
   - Pre-selects current thinking level if already set
 - **Model selector in chain TUI** - Press `[m]` to select a different model for any step
   - Fuzzy search through all available models
-  - Shows current model with ✓ indicator
+  - Shows the current model with a `current` badge
   - Provider/model format (e.g., `anthropic/claude-haiku-4-5`)
   - Override indicator (✎) when model differs from agent default
 - **Model visibility in chain execution** - Shows which model each step is using
@@ -534,8 +542,8 @@
 
 ### Improved
 - **Per-step progress indicators** - When progress is enabled, each step shows its role:
-  - Step 1: `● creates & updates progress.md`
-  - Step 2+: `↔ reads & updates progress.md`
+  - Step 1: `writes progress.md`
+  - Step 2+: `reads progress.md`
   - Clear visualization of progress.md data flow through the chain
 - **Comprehensive tool descriptions** - Better documentation of chain variables:
   - Tool description now explains `{task}`, `{previous}`, `{chain_dir}` in detail
@@ -591,7 +599,7 @@
 ### Improved
 - **Tool description now explicitly shows the three modes** (SINGLE, CHAIN, PARALLEL) with syntax - helps agents pick the right mode when user says "scout → planner"
 - **Chain execution observability** - Now shows:
-  - Chain visualization with status icons: `✓scout → ●planner` (✓=done, ●=running, ○=pending, ✗=failed) - sequential chains only
+  - Chain visualization with status labels: `done scout → running planner` (`done`, `running`, `pending`, `failed`) - sequential chains only
   - Accurate step counter: "step 1/2" instead of misleading "1/1"
   - Current tool and recent output for running step
 

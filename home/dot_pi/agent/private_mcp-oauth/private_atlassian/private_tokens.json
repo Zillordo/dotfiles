@@ -1,0 +1,14 @@
+{
+  "clientInfo": {
+    "clientId": "JDPoK8IG8Gjdg8Mz",
+    "clientIdIssuedAt": 1776252024
+  },
+  "serverUrl": "https://mcp.atlassian.com/v1/mcp",
+  "codeVerifier": "jSfO9ED3D5etLqLsZpXU_UN5Ogr5-96A4CrwPdceig1",
+  "tokens": {
+    "accessToken": "712020-c947edda-8b74-4115-a85b-c53ab0840024:2sHlOpsVigvTwGai:Xd1jiYVmV_1iSugw4TjKOAUbG6lY0uQa",
+    "refreshToken": "712020-c947edda-8b74-4115-a85b-c53ab0840024:2sHlOpsVigvTwGai:FtH9dIS-vpBjlYgy3Imc1wM1Aewy3nqL",
+    "expiresAt": 1776280364.316,
+    "scope": ""
+  }
+}

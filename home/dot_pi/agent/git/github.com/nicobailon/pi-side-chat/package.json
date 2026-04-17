@@ -1,0 +1,38 @@
+{
+  "name": "pi-side-chat",
+  "version": "0.1.4",
+  "description": "Pi extension that forks the current conversation into a side chat",
+  "type": "module",
+  "files": [
+    "*.ts",
+    "README.md",
+    "CHANGELOG.md",
+    "banner.png"
+  ],
+  "keywords": [
+    "pi-package",
+    "pi",
+    "extension",
+    "side-chat",
+    "coding-agent"
+  ],
+  "author": "Nico Bailon",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicobailon/pi-side-chat.git"
+  },
+  "pi": {
+    "extensions": [
+      "./index.ts"
+    ],
+    "video": "https://github.com/nicobailon/pi-side-chat/raw/refs/heads/main/side-chat.mp4"
+  },
+  "peerDependencies": {
+    "@mariozechner/pi-coding-agent": "*",
+    "@mariozechner/pi-agent-core": "*",
+    "@mariozechner/pi-ai": "*",
+    "@mariozechner/pi-tui": "*",
+    "@sinclair/typebox": "*"
+  }
+}

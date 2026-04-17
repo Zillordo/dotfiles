@@ -1,15 +1,17 @@
 {
-  "lastChangelogVersion": "0.67.1",
-  "defaultProvider": "kilo",
-  "defaultModel": "openrouter/free",
-  "defaultThinkingLevel": "off",
+  "lastChangelogVersion": "0.67.3",
+  "defaultProvider": "openai-codex",
+  "defaultModel": "gpt-5.4",
+  "defaultThinkingLevel": "xhigh",
   "theme": "dark",
   "hideThinkingBlock": false,
   "packages": [
     "git:github.com/apmantza/pi-free",
     "git:github.com/nicobailon/pi-subagents",
+    "git:github.com/nicobailon/pi-powerline-footer",
     "git:github.com/nicobailon/pi-web-access",
-    "git:github.com/nicobailon/pi-powerline-footer"
+    "git:github.com/nicobailon/pi-mcp-adapter",
+    "git:github.com/nicobailon/pi-side-chat"
   ],
   "powerline": "default",
   "powerlineShortcuts": {
@@ -19,5 +21,33 @@
   "quietStartup": true,
   "enableInstallTelemetry": false,
   "treeFilterMode": "all",
-  "doubleEscapeAction": "tree"
+  "doubleEscapeAction": "tree",
+  "subagents": {
+    "agentOverrides": {
+      "scout": {
+        "model": "openai-codex/gpt-5.3-codex"
+      },
+      "researcher": {
+        "model": "openai-codex/gpt-5.4-mini",
+        "skills": [
+          "context7"
+        ]
+      },
+      "context-builder": {
+        "model": "openai-codex/gpt-5.4",
+        "skills": [
+          "interface-design"
+        ]
+      },
+      "planner": {
+        "model": "openai-codex/gpt-5.4"
+      },
+      "worker": {
+        "model": "openai-codex/gpt-5.4-mini"
+      }
+    }
+  },
+  "lsp": {
+    "hookMode": "edit_write"
+  }
 }
